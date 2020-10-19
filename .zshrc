@@ -105,6 +105,8 @@ plugins=(
 	zsh-autosuggestions 
 	zsh-history-substring-search 
 	zsh-syntax-highlighting
+	rust
+	rustup
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -183,3 +185,14 @@ export LD_LIBRARY_PATH=/usr/local/lib/nuitrack:$LD_LIBRARY_PATH
 export PATH=/home/dft/Softwares/utils:$PATH
 export DENO_INSTALL="/home/dft/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+SAVEHIST=10000
+
+# Hojjat Aliases
+alias upgrade='sudo apt update && sudo apt upgrade'
+alias cat=bat
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

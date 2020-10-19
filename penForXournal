@@ -1,0 +1,20 @@
+#!/bin/sh
+xsetwacom --set 'HUION Huion Tablet Pad pad' Button 1 "key +ctrl +z -z -ctrl"
+xsetwacom --set 'HUION Huion Tablet Pad pad' Button 2 "key +shift +ctrl +e -e -ctrl -shift"
+xsetwacom --set 'HUION Huion Tablet Pad pad' Button 3 "key +shift +ctrl +p -p -ctrl -shift"
+xsetwacom --set 'HUION Huion Tablet Pad pad' Button 8 "key +shift +ctrl = -ctrl -shift"
+xsetwacom --set 'HUION Huion Tablet Pad pad' Button 9 "key +ctrl - -ctrl"
+xsetwacom --set 'HUION Huion Tablet Pad pad' Button 10 "key +ctrl d -ctrl"
+xsetwacom --set 'HUION Huion Tablet Pad pad' Button 11 "key +ctrl - -ctrl"
+xsetwacom --set 'HUION Huion Tablet Pad pad' Button 12 "key +shift +ctrl a -ctrl -shift"
+
+# The below value was gathered using xrandr and xinput to determine the monitor as well as which
+# number the HUION PenTablet Pen stylus device **id** listed as.
+#    ↳ HUION PenTablet Pen stylus                 id=15   [slave  pointer  (2)]
+
+#stylus=$(xinput --list --short | grep HUION | grep stylus | awk '{ print $8 }' | grep -o -E '[0-9]+') # this uses awk
+stylus=$(xinput --list --short | grep HUION | grep stylus | grep -oE 'id=[0-9]+' | grep -oE '[0-9]+' ) # this uses grep, which might be better, since I don't need to count how many columns are before it.
+xinput map-to-output $stylus HDMI-1
+
+# Left handed stylus
+#xsetwacom set 'HUION PenTablet Pen stylus' rotate half

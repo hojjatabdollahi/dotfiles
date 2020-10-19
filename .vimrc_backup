@@ -1,0 +1,73 @@
+" execute pathogen#infect()
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+" Nerd commenter
+Plug 'preservim/nerdcommenter'
+
+" Rust plugin
+Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'python': ['/usr/local/bin/pyls'],
+    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
+    \ }
+
+" note that if you are using Plug mapping you should not use `noremap` mappings.
+nmap <F5> <Plug>(lcn-menu)
+" Or map each action separately
+nmap <silent>K <Plug>(lcn-hover)
+nmap <silent> gd <Plug>(lcn-definition)
+nmap <silent> <F2> <Plug>(lcn-rename)
+
+" For AutoComplete
+" Plug 'Valloric/YouCompleteMe'
+" let g:ycm_rust_src_path="/home/dft/Projects/rust/rust-master/src"
+" New AutoOComplete
+Plug 'racer-rust/vim-racer'
+let g:racer_experimental_completer = 1
+let g:racer_insert_paren = 1
+
+" Deoplete 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
+" sideways
+Plug 'AndrewRadev/sideways.vim'
+
+
+"enable mouse support
+set mouse=a
+
+filetype plugin indent on
+syntax on
