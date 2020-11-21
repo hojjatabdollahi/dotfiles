@@ -3,8 +3,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/dft/.oh-my-zsh"
-source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export ZSH=$HOME/.oh-my-zsh
 
 
 
@@ -176,15 +175,15 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 
 # NVIDIA CUDA Toolkit
-export PATH=/usr/local/cuda-10.0/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH
-source /opt/ros/melodic/setup.zsh
-source /home/dft/ryan-master/cws/devel/setup.zsh
-export LD_LIBRARY_PATH=/usr/local/lib/nuitrack:$LD_LIBRARY_PATH
+#export PATH=/usr/local/cuda-10.0/bin:$PATH
+#export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH
+#source /opt/ros/melodic/setup.zsh
+#source /home/dft/ryan-master/cws/devel/setup.zsh
+#export LD_LIBRARY_PATH=/usr/local/lib/nuitrack:$LD_LIBRARY_PATH
 
-export PATH=/home/dft/Softwares/utils:$PATH
-export DENO_INSTALL="/home/dft/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH=$HOME/Softwares/utils:$PATH
+#export DENO_INSTALL="/home/dft/.deno"
+#export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 SAVEHIST=10000
@@ -193,6 +192,8 @@ SAVEHIST=10000
 alias upgrade='sudo apt update && sudo apt upgrade'
 alias cat=bat
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+#export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
