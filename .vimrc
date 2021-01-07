@@ -1,3 +1,4 @@
+set shell=/bin/bash
 execute pathogen#infect()
 
 " I moved this here to make sure that all the plugins use this leader
@@ -9,30 +10,30 @@ nnoremap <F7> :UndotreeToggle<cr>
 " vim sensible
 runtime! plugin/sensible.vim
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"" Syntastic
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_auto_jump = 0
-"let g:syntastic_mode_map = {'mode':'passive'}
-nnoremap <F4> :SyntasticCheck<CR> 
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 0
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_auto_jump = 0
+""let g:syntastic_mode_map = {'mode':'passive'}
+"nnoremap <F4> :SyntasticCheck<CR> 
 
-map <F3> <ESC>:call SyntasticToggle()<CR>
-let g:syntastic_is_open = 0
-function! SyntasticToggle()
-    if g:syntastic_is_open == 1
-	lclose
-	let g:syntastic_is_open = 0
-    else
-	Errors 
-	let g:syntastic_is_open = 1
-    endif
-endfunction
+"map <F3> <ESC>:call SyntasticToggle()<CR>
+"let g:syntastic_is_open = 0
+"function! SyntasticToggle()
+    "if g:syntastic_is_open == 1
+	"lclose
+	"let g:syntastic_is_open = 0
+    "else
+	"Errors 
+	"let g:syntastic_is_open = 1
+    "endif
+"endfunction
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -63,6 +64,7 @@ let g:gitgutter_sign_modified = '✹'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '-'
 let g:gitgutter_sign_modified_removed = '-'
+
 " Nerd commenter
 " For some reason vim thinks <C-/> is <C-_>
 nmap <C-_> <Plug>NERDCommenterToggle
@@ -72,6 +74,7 @@ vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 let g:rustfmt_autosave = 1
 
 " Racer
+let g:racer_cmd = "/home/hojjat/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 let g:racer_insert_paren = 1
 augroup Racer
@@ -146,3 +149,80 @@ let g:airline_theme = 'codedark'
 nmap <leader>q :q<CR>
 
 nnoremap <F5> :!cargo run<CR>
+
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+" Proper search
+set incsearch
+set ignorecase
+set smartcase
+set gdefault
+
+" Search results centered please
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
+" Very magic by default
+nnoremap ? ?\v
+nnoremap / /\v
+cnoremap %s/ %sm/
+
+" Ctrl+j and Ctrl+k as Esc
+" Ctrl-j is a little awkward unfortunately:
+" https://github.com/neovim/neovim/issues/5916
+" So we also map Ctrl+k
+nnoremap <C-j> <Esc>
+inoremap <C-j> <Esc>
+vnoremap <C-j> <Esc>
+snoremap <C-j> <Esc>
+xnoremap <C-j> <Esc>
+cnoremap <C-j> <C-c>
+onoremap <C-j> <Esc>
+lnoremap <C-j> <Esc>
+tnoremap <C-j> <Esc>
+
+nnoremap <C-k> <Esc>
+inoremap <C-k> <Esc>
+vnoremap <C-k> <Esc>
+snoremap <C-k> <Esc>
+xnoremap <C-k> <Esc>
+cnoremap <C-k> <C-c>
+onoremap <C-k> <Esc>
+lnoremap <C-k> <Esc>
+tnoremap <C-k> <Esc>
+
+" Ctrl+h to stop searching
+vnoremap <C-h> :nohlsearch<cr>
+nnoremap <C-h> :nohlsearch<cr>
+
+" Suspend with Ctrl+f
+"inoremap <C-f> :sus<cr>
+"vnoremap <C-f> :sus<cr>
+"nnoremap <C-f> :sus<cr>
+
+" Jump to start and end of line using the home row keys
+map H ^
+map L $
+
+" Neat X clipboard integration
+" ,p will paste clipboard into buffer
+" ,c will copy entire buffer into clipboard
+noremap <leader>p :read !xsel --clipboard --output<cr>
+noremap <leader>c :w !xsel -ib<cr><cr>
+set signcolumn=yes

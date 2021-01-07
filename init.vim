@@ -220,3 +220,11 @@ let g:airline#extensions#tabline#enabled = 1
 " For some reason vim thinks <C-/> is <C-_>
 nmap <C-_> <Plug>NERDCommenterToggle
 vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
+
+
+" Ignore the .git folder
+let NERDTreeIgnore=['\.git$']
+" we can also use the line below:
+" let NERDTreeShowHidden=1
+" But this will hide everything
+" You can hide everything using shift+I in nerdtree

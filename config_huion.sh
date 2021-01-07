@@ -34,8 +34,8 @@ then
 	suppress_lvl="10"
 
 	# Maps the graphics tablet to the area of a specified screen (for multiple-screen environments).
-	xsetwacom set "HUION Huion Tablet Touch Strip pad" MapToOutput "$main_screen"
-	xsetwacom set "HUION Huion Tablet stylus" MapToOutput "$main_screen"
+	#xsetwacom set "HUION Huion Tablet Touch Strip pad" MapToOutput "$main_screen"
+	xsetwacom set "HUION Huion Tablet Pen stylus" MapToOutput "$main_screen"
 	xsetwacom set "HUION Huion Tablet Pad pad" MapToOutput "$main_screen"
 
 	xsetwacom --set 'HUION Huion Tablet Pad pad' Button 1 "key +ctrl +z -z -ctrl"

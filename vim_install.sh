@@ -28,3 +28,7 @@ cp $HERE/.coc_vimrc ~/.vim/bundle/coc.nvim/vimrc
 git clone --depth=1 https://tpope.io/vim/sensible.git
 git clone --depth=1 https://github.com/tomasiser/vim-code-dark.git
 sudo apt install fzf -y
+
+git clone https://github.com/easymotion/vim-easymotion ~/.vim/bundle/vim-easymotion
+cd ~/.vim/bundle
+git clone https://github.com/dense-analysis/ale.git
