@@ -11,3 +11,5 @@ https://github.com/sharkdp/bat
 https://github.com/sharkdp/fd
 https://github.com/bootandy/dust
 
+
+sudo apt install bat ripgrep fd-find
