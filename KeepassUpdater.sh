@@ -132,4 +132,7 @@ sudo cp -r usr/share/icons /usr/share/
 # run sed and change the target of that file
 sed -i "s|keepass2 %f|$EXECADDR|g" usr/share/applications/keepass2.desktop
 # install the launcher
-sudo cp usr/share/applications/keepass2.desktop /usr/share/applications/keepass2.desktop
+mkdir -p ~/.local/share/applications
+cp usr/share/applications/keepass2.desktop ~/.local/share/applications/keepass2.desktop
+chmod +x ~/.local/share/applications/keepass2.desktop
+
