@@ -1,5 +1,9 @@
 #!/bin/bash
 
+sudo apt install python3 python3-pip -y
+pip3 install --user virtualenv virtualenvwrapper
+
+
 sudo apt install zsh -y
 sudo apt install powerline fonts-powerline -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
