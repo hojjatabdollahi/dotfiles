@@ -5,8 +5,8 @@ ln -s $(pwd)/.fonts ~/.fonts
 
 
 sudo apt install alacritty
-mkdir -p $(HOME)/.config/alacritty/
-ln -s $(pwd)/alacritty.yml $(HOME)/alacritty/
+mkdir -p $HOME/.config/alacritty/
+ln -s $(pwd)/alacritty.yml $HOME/.config/alacritty/
 
 sudo apt install tmux
 
