@@ -112,7 +112,7 @@ if test ! -e "KeePass.exe"; then
 fi
 
 # current directory is where keepass.exe exists
-EXECADDR=$(pwd)/KeePass.exe\ %f
+EXECADDR=mono\ $(pwd)/KeePass.exe\ %f
 
 # install mono
 sudo apt install mono-complete
@@ -129,6 +129,9 @@ ar -x keepass2*
 tar -xvf data.tar.xz
 # copy the icons into the system
 sudo cp -r usr/share/icons /usr/share/
+
+# update the icon cache
+sudo update-icon-caches /usr/share/icons/*
 # run sed and change the target of that file
 sed -i "s|keepass2 %f|$EXECADDR|g" usr/share/applications/keepass2.desktop
 # install the launcher
