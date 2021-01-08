@@ -194,7 +194,7 @@ SAVEHIST=10000
 
 # Hojjat Aliases
 alias upgrade='sudo apt update && sudo apt upgrade'
-alias cat=bat
+alias cat=batcat
 
 #export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
