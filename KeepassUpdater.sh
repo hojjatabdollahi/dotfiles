@@ -96,9 +96,9 @@ msg "- arguments: ${args[*]-}"
 
 if test $default; then
     sudo apt install unzip
-    wget https://phoenixnap.dl.sourceforge.net/project/keepass/KeePass%202.x/2.46/KeePass-2.46.zip
-    unzip KeePass-2.46.zip
-    rm KeePass-2.46.zip
+    wget https://phoenixnap.dl.sourceforge.net/project/keepass/KeePass%202.x/2.47/KeePass-2.47.zip
+    unzip KeePass-2.47.zip
+    rm KeePass-2.47.zip
 
     cd Plugins
     wget https://github.com/KeeTrayTOTP/KeeTrayTOTP/releases/download/v0.108.0/KeeTrayTOTP.plgx

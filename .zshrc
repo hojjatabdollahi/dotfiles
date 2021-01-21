@@ -110,6 +110,7 @@ plugins=(
 	rust
 	rustup
 	vi-mode
+	exercism
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -200,4 +201,5 @@ alias cat=batcat
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
 
