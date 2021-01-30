@@ -203,3 +203,7 @@ alias cat=batcat
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 
+eval $(thefuck --alias)
+
+export PATH=$Home/Software/nvim-linux64:$PATH  
+alias vim=nvim
