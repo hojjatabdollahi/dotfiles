@@ -9,13 +9,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'preservim/tagbar'
-"Plug 'preservim/nerdtree' |
-            "\ Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'ryanoasis/vim-devicons'
-"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-"Plug 'scrooloose/nerdtree-project-plugin'
-"Plug 'PhilRunninger/nerdtree-buffer-ops'
-"Plug 'PhilRunninger/nerdtree-visual-selection'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdcommenter'
 Plug 'racer-rust/vim-racer'
@@ -58,10 +51,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-
-
 let g:syntastic_cpp_checkers = ['cpplint']
 let g:syntastic_c_checkers = ['cpplint']
 let g:syntastic_cpp_cpplint_exec = 'cpplint'
@@ -72,22 +61,6 @@ let g:syntastic_check_on_wq = 0
 
 nmap <F8> :TagbarToggle<CR>
 
-
-" Nerd Tree
-"map <F9> :NERDTreeToggle<CR>
-"autocmd VimEnter * NERDTree
-"autocmd VimEnter * wincmd p
-" close nerd tree if the last file is closed
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"let g:NERDTreeChDirMode = 3
-
-"function NERDRefresh ()
-  "if &filetype == "nerdtree"
-      "NERDTreeRefreshRoot
-  "endif
-"endfunction
-
-"call NERDRefresh()
 
 map <F9> :CHADopen<CR>
 autocmd VimEnter * CHADopen --nofocus
@@ -101,21 +74,6 @@ autocmd bufenter * if (winnr("$") == 1 && &ft=="CHADtree") | q | endif
 
 
 
-
-
-" Nerd Tree Git plugin
-"let g:NERDTreeGitStatusIndicatorMapCustom = {
-                "\ 'Modified'  :'✹',
-                "\ 'Staged'    :'✚',
-                "\ 'Untracked' :'✭',
-                "\ 'Renamed'   :'➜',
-                "\ 'Unmerged'  :'═',
-                "\ 'Deleted'   :'✖',
-                "\ 'Dirty'     :'✗',
-                "\ 'Ignored'   :'☒',
-                "\ 'Clean'     :'✔︎',
-                "\ 'Unknown'   :'?',
-                "\ }
 
 
 " git gutter
