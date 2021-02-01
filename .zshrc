@@ -207,3 +207,4 @@ eval $(thefuck --alias)
 
 export PATH=$Home/Software/nvim-linux64:$PATH  
 alias vim=nvim
+export PATH="$(yarn global bin):$PATH"

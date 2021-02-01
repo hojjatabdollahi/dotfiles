@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 
 
 Plug 'rust-lang/rust.vim'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 Plug 'preservim/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdcommenter'
@@ -16,7 +16,7 @@ Plug 'AndrewRadev/sideways.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'easymotion/vim-easymotion'
+"Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-sensible'
 Plug 'joshdick/onedark.vim'
@@ -25,10 +25,14 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'cespare/vim-toml'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'rhysd/vim-clang-format'
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+"Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 
+Plug 'justinmk/vim-sneak'
+Plug 'voldikss/vim-floaterm'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 call plug#end()
 
+let g:sneak#label = 1
 
 " I moved this here to make sure that all the plugins use this leader
 let mapleader = " " 
@@ -47,31 +51,30 @@ let g:lightline = {
   \ 'colorscheme': 'onedark',
   \ }
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_cpp_checkers = ['cpplint']
-let g:syntastic_c_checkers = ['cpplint']
-let g:syntastic_cpp_cpplint_exec = 'cpplint'
+"let g:syntastic_cpp_checkers = ['cpplint']
+"let g:syntastic_c_checkers = ['cpplint']
+"let g:syntastic_cpp_cpplint_exec = 'cpplint'
 " The following two lines are optional. Configure it to your liking!
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 
 nmap <F8> :TagbarToggle<CR>
 
 
-map <F9> :CHADopen<CR>
-autocmd VimEnter * CHADopen --nofocus
-autocmd VimEnter * wincmd p
+"map <F9> :CHADopen<CR>
+"autocmd VimEnter * CHADopen --nofocus
+"autocmd VimEnter * wincmd p
 " close chad tree if the last file is closed
 "
-let g:chadtree_settings = {"view.width": 30 }
-let g:chadtree_settings = {"theme.icon_colour_set": "github" }
 
-autocmd bufenter * if (winnr("$") == 1 && &ft=="CHADtree") | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && &ft=="CHADtree") | q | endif
 
+"let g:chadtree_settings = {"view.width": 25,  "theme.icon_colour_set": "github" }
 
 
 
@@ -367,19 +370,19 @@ nmap <leader>q :q<CR>
 nnoremap <F5> :!cargo run<CR>
 
 " <Leader>f{char} to move to {char}
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
+"map  <Leader>f <Plug>(easymotion-bd-f)
+"nmap <Leader>f <Plug>(easymotion-overwin-f)
 
 " s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
+"nmap s <Plug>(easymotion-overwin-f2)
 
 " Move to line
-map <Leader>L <Plug>(easymotion-bd-jk)
-nmap <Leader>L <Plug>(easymotion-overwin-line)
+"map <Leader>L <Plug>(easymotion-bd-jk)
+"nmap <Leader>L <Plug>(easymotion-overwin-line)
 
 " Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
+"map  <Leader>w <Plug>(easymotion-bd-w)
+"nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " Proper search
 set incsearch
@@ -448,8 +451,12 @@ set signcolumn=yes
 " terminal
 set splitbelow
 "set termwinsize=10x0
-nnoremap <C-x> :split term://zsh<cr>
-tnoremap <Esc> <C-\><C-n>
+"nnoremap <C-x> :split term://zsh<cr>
+"tnoremap <Esc> <C-\><C-n>
+let g:floaterm_keymap_new = '<leader>ft'
+let g:floaterm_keymap_toggle = '<leader>t'
+let g:floaterm_shell = 'zsh'
+
 
 " Change the shape of the cursor in Alacritty
 let &t_SI = "\<Esc>[6 q"
@@ -462,3 +469,51 @@ au CursorHoldI * sil call CocActionAsync('showSignatureHelp')
 
 :set expandtab
 :set tabstop=4
+
+
+
+
+function! s:explorer_cur_dir()
+  let node_info = CocAction('runCommand', 'explorer.getNodeInfo', 0)
+  return fnamemodify(node_info['fullpath'], ':h')
+endfunction
+
+function! s:exec_cur_dir(cmd)
+  let dir = s:explorer_cur_dir()
+  execute 'cd ' . dir
+  execute a:cmd
+endfunction
+
+function! s:init_explorer()
+  set winblend=10
+
+  " Integration with other plugins
+
+  " CocList
+  nmap <buffer> <Leader>fg :call <SID>exec_cur_dir('CocList -I grep')<CR>
+  nmap <buffer> <Leader>fG :call <SID>exec_cur_dir('CocList -I grep -regex')<CR>
+  nmap <buffer> <C-p> :call <SID>exec_cur_dir('CocList files')<CR>
+
+  " vim-floaterm
+  nmap <buffer> <Leader>ft :call <SID>exec_cur_dir('FloatermNew --wintype=floating')<CR>
+endfunction
+
+function! s:enter_explorer()
+  if &filetype == 'coc-explorer'
+    " statusline
+    setl statusline=coc-explorer
+  endif
+endfunction
+
+augroup CocExplorerCustom
+  autocmd!
+  autocmd BufEnter * call <SID>enter_explorer()
+  autocmd FileType coc-explorer call <SID>init_explorer()
+augroup END
+
+
+:nmap <F9> :CocCommand explorer<CR>
+autocmd VimEnter * CocCommand explorer --no-focus
+autocmd VimEnter * wincmd p
+autocmd bufenter * if (winnr("$") == 1 && &ft=="coc-explorer") | q | endif
+

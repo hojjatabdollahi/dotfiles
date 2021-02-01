@@ -32,3 +32,17 @@ sudo apt install fzf -y
 git clone https://github.com/easymotion/vim-easymotion ~/.vim/bundle/vim-easymotion
 cd ~/.vim/bundle
 git clone https://github.com/dense-analysis/ale.git
+
+
+# Here is coc extensions
+#{
+  #"dependencies": {
+    #"coc-clangd": ">=0.8.0",
+    #"coc-diagnostic": ">=0.18.0",
+    #"coc-explorer": ">=0.15.1",
+    #"coc-json": ">=1.3.3",
+    #"coc-rust-analyzer": ">=0.24.0",
+    #"coc-tsserver": ">=1.6.7"
+  #}
+#}
+
