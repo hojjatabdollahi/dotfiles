@@ -10,30 +10,6 @@ nnoremap <F7> :UndotreeToggle<cr>
 " vim sensible
 runtime! plugin/sensible.vim
 
-"" Syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 0
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_auto_jump = 0
-""let g:syntastic_mode_map = {'mode':'passive'}
-"nnoremap <F4> :SyntasticCheck<CR> 
-
-"map <F3> <ESC>:call SyntasticToggle()<CR>
-"let g:syntastic_is_open = 0
-"function! SyntasticToggle()
-    "if g:syntastic_is_open == 1
-	"lclose
-	"let g:syntastic_is_open = 0
-    "else
-	"Errors 
-	"let g:syntastic_is_open = 1
-    "endif
-"endfunction
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -105,10 +81,6 @@ filetype plugin indent on
 syntax on
 
 
-" Fix the problem with "modifyOtherKeys" 
-" This error causes random stuff to be saved when I press :w
-let &t_TI = ""
-let &t_TE = ""
 
 
 set nobackup
@@ -226,3 +198,22 @@ map L $
 noremap <leader>p :read !xsel --clipboard --output<cr>
 noremap <leader>c :w !xsel -ib<cr><cr>
 set signcolumn=yes
+
+
+
+" terminal
+set splitbelow
+set termwinsize=10x0
+nnoremap <C-x> :terminal<cr>
+
+" Change the shape of the cursor in Alacritty
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[0 q"
+
+set updatetime=300
+au CursorHold * sil call CocActionAsync('highlight')
+au CursorHoldI * sil call CocActionAsync('showSignatureHelp')
+
+:set expandtab
+:set tabstop=4
