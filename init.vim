@@ -5,6 +5,9 @@ let mapleader = " "
 
 call plug#begin('~/.vim/plugged')
 Plug 'neovim/nvim-lspconfig'
+" Extensions to built-in LSP, for example, providing type inlay hints
+Plug 'nvim-lua/lsp_extensions.nvim'
+
 Plug 'nvim-lua/completion-nvim'
 " Plug 'nvim-lua/diagnostic-nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -42,6 +45,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'voldikss/vim-floaterm'
 "Plug 'jackguo380/vim-lsp-cxx-highlight'
 call plug#end()
+
 
 let g:sneak#label = 1
 
@@ -164,6 +168,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap('n', 'gA', '<cmd>lua  vim.lsp.buf.code_action()<CR>', opts)
 
   -- Set some keybinds conditional on server capabilities
   if client.resolved_capabilities.document_formatting then
@@ -196,6 +201,9 @@ end
 EOF
 
 
+" Enable type inlay hints
+autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
+\ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
 
 
 " Set completeopt to have a better completion experience
