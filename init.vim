@@ -3,8 +3,17 @@ set shell=/bin/bash
 " I moved this here to make sure that all the plugins use this leader
 let mapleader = " " 
 
+set nocompatible
+
 call plug#begin('~/.vim/plugged')
+Plug 'sheerun/vim-polyglot'
+
+" requires 
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
+
 Plug 'neovim/nvim-lspconfig'
+
 " Extensions to built-in LSP, for example, providing type inlay hints
 Plug 'nvim-lua/lsp_extensions.nvim'
 
@@ -37,8 +46,8 @@ Plug 'joshdick/onedark.vim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 "Plug 'cespare/vim-toml'
-Plug 'jackguo380/vim-lsp-cxx-highlight'
-Plug 'rhysd/vim-clang-format'
+" Plug 'jackguo380/vim-lsp-cxx-highlight'
+" Plug 'rhysd/vim-clang-format'
 "Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 
 Plug 'justinmk/vim-sneak'
@@ -291,7 +300,7 @@ imap <s-tab> <Plug>(completion_smart_s_tab)
 " EOF
 
 command! -buffer -nargs=0 LspShowLineDiagnostics lua require'jumpLoc'.openLineDiagnostics()
-nnoremap <buffer><silent> <C-h> <cmd>LspShowLineDiagnostics<CR>
+nnoremap <buffer><silent> <C-d> <cmd>LspShowLineDiagnostics<CR>
 command! Format execute 'lua vim.lsp.buf.formatting()'
 
 :lua << EOF
@@ -730,16 +739,77 @@ let &t_EI = "\<Esc>[0 q"
 "autocmd bufenter * if (winnr("$") == 1 && &ft=="coc-explorer") | q | endif
 
 
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 15
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
+" let g:netrw_banner = 0
+" let g:netrw_liststyle = 3
+" let g:netrw_browse_split = 4
+" let g:netrw_altv = 1
+" let g:netrw_winsize = 15
+" augroup ProjectDrawer
+"   autocmd!
+"   autocmd VimEnter * :Vexplore
+" augroup END
+
+" autocmd bufenter * if (winnr("$") == 1 && &ft=="netrw") | q | endif
+
+" let g:NetrwIsOpen=1
+
+" function! ToggleNetrw()
+"     if g:NetrwIsOpen
+"         let i = bufnr("$")
+"         while (i >= 1)
+"             if (getbufvar(i, "&filetype") == "netrw")
+"                 silent exe "bwipeout " . i 
+"             endif
+"             let i-=1
+"         endwhile
+"         let g:NetrwIsOpen=0
+"     else
+"         let g:NetrwIsOpen=1
+"         silent Lexplore
+"     endif
+" endfunction
+
+" " Add your own mapping. For example:
+" noremap <silent> <C-E> :call ToggleNetrw()<CR>
+"
+let g:nvim_tree_auto_open = 1 "0 by default, opens the tree when typing `vim $DIR` or `vim`
+let g:nvim_tree_auto_close = 1 "0 by default, closes the tree when it's the last window
+let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
+let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
+let g:nvim_tree_hijack_netrw = 0 "1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
+nnoremap <C-E> :NvimTreeToggle<CR>
+nnoremap <C-L> :NvimTreeRefresh<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
+" NvimTreeOpen and NvimTreeClose are also available if you need them
+
+set termguicolors " this variable must be enabled for colors to be applied properly
+
+" a list of groups can be found at `:help nvim_tree_highlight`
+" highlight NvimTreeFolderIcon guibg=blue
+let g:nvim_tree_icons = {
+    \ 'default': '',
+    \ 'symlink': '',
+    \ 'git': {
+    \   'unstaged': "✗",
+    \   'staged': "✓",
+    \   'unmerged': "",
+    \   'renamed': "➜",
+    \   'untracked': "★"
+    \   },
+    \ 'folder': {
+    \   'default': "",
+    \   'open': "",
+    \   'empty': "",
+    \   'empty_open': "",
+    \   'symlink': "",
+    \   }
+    \ }
+let g:nvim_tree_show_icons = {
+    \ 'git': 1,
+    \ 'folders': 1,
+    \ 'files': 1,
+    \ }
 
 
-:nmap <F9> :Vexplorer<CR>
-autocmd bufenter * if (winnr("$") == 1 && &ft=="netrw") | q | endif
+
+nnoremap <C-j> :Rg<CR>
