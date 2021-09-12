@@ -1,4 +1,5 @@
 export TERM="xterm-256color"
+
 # If you come from bash you might have to change your $PATH.
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -98,19 +99,19 @@ POWERLEVEL9K_CONTEXT_REMOTE_SUDO_BACKGROUND=$P9KGT_TERMINAL_BACKGROUND
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    zshfl
 	git 
-	python
-	pyenv
-	virtualenv
+	# python
+	# pyenv
+	# virtualenv
 	zsh-completions
-	autoswitch_virtualenv
+	# autoswitch_virtualenv
 	zsh-autosuggestions 
 	zsh-history-substring-search 
 	zsh-syntax-highlighting
 	rust
 	rustup
 	vi-mode
-	exercism
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -150,14 +151,14 @@ mkcdir ()
 }
 
 
-function virtualenv_info {
-[ $VIRTUAL_ENV ] && echo ‘(‘`basename $VIRTUAL_ENV`’) ‘
-}
+# function virtualenv_info {
+# [ $VIRTUAL_ENV ] && echo ‘(‘`basename $VIRTUAL_ENV`’) ‘
+#}
 #Virtualenvwrapper settings:
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_VIRTUALENV=/home/dft/.local/bin/virtualenv
-source ~/.local/bin/virtualenvwrapper.sh
+# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# export WORKON_HOME=$HOME/.virtualenvs
+# export VIRTUALENVWRAPPER_VIRTUALENV=/home/dft/.local/bin/virtualenv
+# source ~/.local/bin/virtualenvwrapper.sh
 
 function chpwd() {
     emulate -L zsh
@@ -195,7 +196,6 @@ SAVEHIST=10000
 
 # Hojjat Aliases
 alias upgrade='sudo apt update && sudo apt upgrade'
-alias cat=batcat
 
 #export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
@@ -205,6 +205,55 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 eval $(thefuck --alias)
 
-export PATH=${HOME}/Software/nvim-linux64:$PATH  
-alias vim=nvim
+export PATH=${HOME}/Software/:$PATH  
+alias vim=nvim.appimage
 export PATH="$(yarn global bin):$PATH"
+
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source /opt/ros/melodic/setup.zsh
+source /home/hojjat/ryan-master/cws/devel/setup.zsh
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
+
+# Would this fix the speed issue?
+lazy_load() {
+    # Act as a stub to another shell function/command. When first run, it will load the actual function/command then execute it.
+    # E.g. This made my zsh load 0.8 seconds faster by loading `nvm` when "nvm", "npm" or "node" is used for the first time
+    # $1: space separated list of alias to release after the first load
+    # $2: file to source
+    # $3: name of the command to run after it's loaded
+    # $4+: argv to be passed to $3
+    echo "Lazy loading $1 ..."
+
+    # $1.split(' ') using the s flag. In bash, this can be simply ($1) #http://unix.stackexchange.com/questions/28854/list-elements-with-spaces-in-zsh
+    # Single line won't work: local names=("${(@s: :)${1}}"). Due to http://stackoverflow.com/questions/14917501/local-arrays-in-zsh   (zsh 5.0.8 (x86_64-apple-darwin15.0))
+    local -a names
+    if [[ -n "$ZSH_VERSION" ]]; then
+        names=("${(@s: :)${1}}")
+    else
+        names=($1)
+    fi
+    unalias "${names[@]}"
+    . $2
+    shift 2
+    $*
+}
+
+group_lazy_load() {
+    local script
+    script=$1
+    shift 1
+    for cmd in "$@"; do
+        alias $cmd="lazy_load \"$*\" $script $cmd"
+    done
+}
+
+export NVM_DIR=~/.nvm
+group_lazy_load $HOME/.nvm/nvm.sh nvm node npm truffle gulp yarn
+
+unset -f group_lazy_load
+if [ -e /home/hojjat/.nix-profile/etc/profile.d/nix.sh ]; then . /home/hojjat/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
