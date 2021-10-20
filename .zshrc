@@ -99,7 +99,6 @@ POWERLEVEL9K_CONTEXT_REMOTE_SUDO_BACKGROUND=$P9KGT_TERMINAL_BACKGROUND
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    zshfl
 	git 
 	# python
 	# pyenv
@@ -213,9 +212,11 @@ export PATH="$(yarn global bin):$PATH"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 source /opt/ros/melodic/setup.zsh
-source /home/hojjat/ryan-master/cws/devel/setup.zsh
+source $HOME/ryan-master/cws/devel/setup.zsh
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+	if [ -f /etc/profile.d/vte.sh ]; then
         source /etc/profile.d/vte.sh
+	fi
 fi
 
 
@@ -256,4 +257,4 @@ export NVM_DIR=~/.nvm
 group_lazy_load $HOME/.nvm/nvm.sh nvm node npm truffle gulp yarn
 
 unset -f group_lazy_load
-if [ -e /home/hojjat/.nix-profile/etc/profile.d/nix.sh ]; then . /home/hojjat/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

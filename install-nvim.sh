@@ -7,5 +7,5 @@ ln -s ${PWD}/aesth.vim ${HOME}/.config/nvim/
 ln -s ${PWD}/xstl.vim ${HOME}/.config/nvim/
 
 
-sudo pip install --upgrade neovim
+#sudo pip install --upgrade neovim
 

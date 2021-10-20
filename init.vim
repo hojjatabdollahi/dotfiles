@@ -29,7 +29,7 @@ Plug 'hrsh7th/nvim-cmp'
 
 " LSP completion source for nvim-cmp
 Plug 'hrsh7th/cmp-nvim-lsp'
-
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 " Snippet completion source for nvim-cmp
 Plug 'hrsh7th/cmp-vsnip'
 
@@ -56,6 +56,21 @@ Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
 
+lua << EOF
+require'nvim-tree'.setup {
+  -- disables netrw completely
+ hijack_netrw = true,
+ auto_open = true,
+ auto_close = true
+
+  }
+EOF
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Set completeopt to have a better completion experience
 " :help completeopt
@@ -246,11 +261,8 @@ nnoremap <c-j> i<cr><Esc>
 nnoremap <c-p> :Files<CR>
 
 " Tree
-let g:nvim_tree_auto_open = 1 "0 by default, opens the tree when typing `vim $DIR` or `vim`
-let g:nvim_tree_auto_close = 1 "0 by default, closes the tree when it's the last window
 let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
-let g:nvim_tree_hijack_netrw = 0 "1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
 nnoremap <C-E> :NvimTreeToggle<CR>
 nnoremap <C-L> :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
