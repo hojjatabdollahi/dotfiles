@@ -20,6 +20,7 @@ Plug 'junegunn/fzf.vim'
 
 " theme
 Plug 'joshdick/onedark.vim'
+Plug 'glepnir/spaceline.vim'
 
 " Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
@@ -190,6 +191,10 @@ filetype plugin indent on
 
 
 " Theme
+let g:spaceline_seperate_style = 'curve'
+let g:spaceline_colorscheme = 'space'
+
+let g:onedark_style = 'darker'
 colorscheme onedark
 let g:lightline = {
   \ 'colorscheme': 'onedark',
