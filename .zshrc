@@ -206,7 +206,14 @@ eval $(thefuck --alias)
 
 export PATH=${HOME}/Software/:$PATH  
 alias vim=nvim
+export PATH="/home/hojjat/.local/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 export PATH="$(yarn global bin):$PATH"
+
 
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -258,3 +265,4 @@ group_lazy_load $HOME/.nvm/nvm.sh nvm node npm truffle gulp yarn
 
 unset -f group_lazy_load
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+export MOZ_USE_XINPUT2=1
