@@ -199,27 +199,29 @@ alias upgrade='sudo apt update && sudo apt upgrade'
 #export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+#export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 
 eval $(thefuck --alias)
 
 export PATH=${HOME}/Software/:$PATH  
+export PATH=${HOME}/Softwares/:$PATH  
 alias vim=nvim
 export PATH="/home/hojjat/.local/bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH="$(yarn global bin):$PATH"
+#export PATH="$(yarn global bin):$PATH"
 
 
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source /opt/ros/melodic/setup.zsh
-source $HOME/ryan-master/cws/devel/setup.zsh
+
+if [[ "$(hostname)" != "laptop" ]]; then
+    source /opt/ros/melodic/setup.zsh
+    source $HOME/ryan-master/cws/devel/setup.zsh
+fi
+
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 	if [ -f /etc/profile.d/vte.sh ]; then
         source /etc/profile.d/vte.sh
@@ -266,3 +268,7 @@ group_lazy_load $HOME/.nvm/nvm.sh nvm node npm truffle gulp yarn
 unset -f group_lazy_load
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 export MOZ_USE_XINPUT2=1
+
+
+export PATH="$PATH:/home/hojjat/Softwares/flutter/bin"
+
