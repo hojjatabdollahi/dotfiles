@@ -319,11 +319,11 @@ background_opacity: 1.0
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 #shell:
-  #program: /bin/zsh
-  #args:
-    #- -i
-    #- -c
-    #- "if ! tmux a ; then tmux; fi"
+#  program: /bin/zsh
+#  args:
+#    - -i
+#    - -c
+#    - "if ! tmux a ; then tmux; fi"
 
 # Startup directory
 #
