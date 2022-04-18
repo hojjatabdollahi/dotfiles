@@ -109,7 +109,6 @@ plugins=(
 	zsh-history-substring-search 
 	zsh-syntax-highlighting
 	rust
-	rustup
 	vi-mode
 	)
 
