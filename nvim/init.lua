@@ -16,6 +16,7 @@ require("packer").startup(function()
 	use("tpope/vim-endwise") -- wisely add "end" in ruby, endfunction/endif/more in vim script, etc.
 	use({
 		"numToStr/Comment.nvim",
+		tag='v0.6',
 		config = function()
 			require("Comment").setup()
 		end,
@@ -69,6 +70,7 @@ require("packer").startup(function()
 	use("folke/trouble.nvim")
 
 	use("akinsho/toggleterm.nvim")
+	
 	use("joshuarubin/rubix.vim")
 	use("joshuarubin/rubix-telescope.nvim")
 
@@ -485,7 +487,7 @@ end
 vim.g.firenvim_config = firenvim_config
 
 require("nvim-treesitter.configs").setup({
-	ensure_installed = "maintained",
+	ensure_installed = {"rust", "c"},
 	highlight = { enable = true },
 	-- indent = { enable = true }, -- TODO(jawa) this is too experimental right now, enable when possible
 	context_commentstring = {
