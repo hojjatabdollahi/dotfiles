@@ -109,7 +109,6 @@ plugins=(
 	zsh-history-substring-search 
 	zsh-syntax-highlighting
 	rust
-	rustup
 	vi-mode
 	)
 
@@ -272,3 +271,4 @@ export MOZ_USE_XINPUT2=1
 
 export PATH="$PATH:/home/hojjat/Softwares/flutter/bin"
 
+alias rust-analyzer="rustup run nightly rust-analyzer"

@@ -1,0 +1,27 @@
+#!/bin/bash
+#!/bin/sh
+
+# Puts laptop into s2idle mode for an hour, and if no interruption occurred then put it in deep sleep (s3) mode, and subsequently into hibernation after 2 more hours
+
+s2idle_sleep_time=30  # 1 hour
+deep_sleep_time=60    # 2 hour
+
+sleep_until() {
+    start_time=$(date +%s)
+    rtcwake -u -s "$1" -m mem 1>/dev/null
+    end_time=$(date +%s)
+
+    echo $(( end_time - start_time + 2 ))
+}
+
+original_sleep=$(cat /sys/power/mem_sleep | awk -F '[][]' '{print $2}')
+
+echo s2idle > /sys/power/mem_sleep
+if [ $(sleep_until $s2idle_sleep_time) -gt $s2idle_sleep_time ]; then
+    echo deep > /sys/power/mem_sleep
+    if [ $(sleep_until $deep_sleep_time) -gt $deep_sleep_time ]; then
+	    systemctl hibernate
+    fi
+fi
+
+echo "$original_sleep" > /sys/power/mem_sleep
