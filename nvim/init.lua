@@ -86,6 +86,9 @@ require("packer").startup(function()
 	use("ryanoasis/vim-devicons")
 	use("kyazdani42/nvim-web-devicons")
 
+	-- Motion
+	use 'ggandor/lightspeed.nvim'
+
 	-- colorscheme
 	use("sainnhe/gruvbox-material")
 	use("folke/lsp-colors.nvim")
