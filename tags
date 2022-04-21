@@ -1,0 +1,537 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/hojjat/Projects/dotfiles/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
+#	.vimrc	/^nnoremap <silent> # #zz$/;"	m
+#	init.vim	/^nnoremap <silent> # #zz$/;"	m
+$V	init.vim	/^let $V=stdpath('config')$/;"	v
+%s/	.vimrc	/^cnoremap %s\/ %sm\/$/;"	m
+%s/	init.vim	/^cnoremap %s\/ %sm\/$/;"	m
+*	.vimrc	/^nnoremap <silent> * *zz$/;"	m
+*	init.vim	/^nnoremap <silent> * *zz$/;"	m
+/	.vimrc	/^nnoremap \/ \/\\v$/;"	m
+/	init.vim	/^nnoremap \/ \/\\v$/;"	m
+0	coc-settings.json	/^                "^[^:]+:(\\\\d+):(\\\\d+)?\\\\s+([^:]+?)\\\\s\\\\[(\\\\d)\\\\]$",$/;"	s	array:languageserver.dls.initializationOptions.linters.cpplint.formatPattern
+0	coc-settings.json	/^              "^[^:]+:(\\\\d+):(\\\\d+):\\\\s+([^:]+):\\\\s+(.*)$",$/;"	s	array:languageserver.dls.initializationOptions.linters.shellcheck.formatPattern
+0	coc-settings.json	/^              "args": ["--filter=-build\/c++11","%file"],$/;"	s	array:languageserver.dls.initializationOptions.linters.cpplint.args
+0	coc-settings.json	/^            "args": [ "--fix" ]$/;"	s	array:languageserver.dls.initializationOptions.formatters.dartfmt.args
+0	coc-settings.json	/^            "args": [ "--format=gcc", "-"],$/;"	s	array:languageserver.dls.initializationOptions.linters.shellcheck.args
+0	coc-settings.json	/^      "args": ["--stdio"],$/;"	s	array:languageserver.dls.args
+0	coc-settings.json	/^      "expandable?",$/;"	s	array:explorer.keyMappings.global.<2-LeftMouse>
+0	coc-settings.json	/^      "filetypes": [ "sh", "cpp" ],$/;"	s	array:languageserver.dls.filetypes
+0	coc-settings.json	/^      ["expanded?", "collapse", "expand"],$/;"	s	array:explorer.keyMappings.global.<2-LeftMouse>.1
+0	coc-settings.json	/^    "<bs>": ["wait", "gotoParent"],$/;"	s	array:explorer.keyMappings.global.<bs>
+0	coc-settings.json	/^    "<cr>": ["wait", "expandable?",["expanded?", "collapse", "expand"], "open"],$/;"	s	array:explorer.keyMappings.global.<cr>
+0	coc-settings.json	/^    "<cr>": ["wait", "expandable?",["expanded?", "collapse", "expand"], "open"],$/;"	s	array:explorer.keyMappings.global.<cr>.2
+0	coc-settings.json	/^    "J": ["wait", "toggleSelection", "normal:j"],$/;"	s	array:explorer.keyMappings.global.J
+0	coc-settings.json	/^    "K": ["wait", "toggleSelection", "normal:k"],$/;"	s	array:explorer.keyMappings.global.K
+0	coc-settings.json	/^    "[D": ["wait", "markPrev:diagnosticError"],$/;"	s	array:explorer.keyMappings.global.[D
+0	coc-settings.json	/^    "[[": ["wait", "sourcePrev"],$/;"	s	array:explorer.keyMappings.global.[[
+0	coc-settings.json	/^    "[c": ["wait", "markPrev:git"],$/;"	s	array:explorer.keyMappings.global.[c
+0	coc-settings.json	/^    "[d": ["wait", "markPrev:diagnosticError:diagnosticWarning"],$/;"	s	array:explorer.keyMappings.global.[d
+0	coc-settings.json	/^    "[i": ["wait", "indentPrev"],$/;"	s	array:explorer.keyMappings.global.[i
+0	coc-settings.json	/^    "[m": ["wait", "markPrev:modified"],$/;"	s	array:explorer.keyMappings.global.[m
+0	coc-settings.json	/^    "]D": ["wait", "markNext:diagnosticError"],$/;"	s	array:explorer.keyMappings.global.]D
+0	coc-settings.json	/^    "]]": ["wait", "sourceNext"],$/;"	s	array:explorer.keyMappings.global.]]
+0	coc-settings.json	/^    "]c": ["wait", "markNext:git"],$/;"	s	array:explorer.keyMappings.global.]c
+0	coc-settings.json	/^    "]d": ["wait", "markNext:diagnosticError:diagnosticWarning"],$/;"	s	array:explorer.keyMappings.global.]d
+0	coc-settings.json	/^    "]i": ["wait", "indentNext"],$/;"	s	array:explorer.keyMappings.global.]i
+0	coc-settings.json	/^    "]m": ["wait", "markNext:modified"],$/;"	s	array:explorer.keyMappings.global.]m
+0	coc-settings.json	/^    "c": ["wait", "expandable?", "cd", "open"],$/;"	s	array:explorer.keyMappings.global.c
+0	coc-settings.json	/^    "gh": ["wait", "collapse:recursive"],$/;"	s	array:explorer.keyMappings.global.gh
+0	coc-settings.json	/^    "gj": ["wait", "expandableNext"],$/;"	s	array:explorer.keyMappings.global.gj
+0	coc-settings.json	/^    "gk": ["wait", "expandablePrev"],$/;"	s	array:explorer.keyMappings.global.gk
+0	coc-settings.json	/^    "gl": ["wait", "expand:recursive"],$/;"	s	array:explorer.keyMappings.global.gl
+0	coc-settings.json	/^    "gs": ["wait", "reveal:select"],$/;"	s	array:explorer.keyMappings.global.gs
+0	coc-settings.json	/^    "h": ["wait", "collapse"],$/;"	s	array:explorer.keyMappings.global.h
+0	coc-settings.json	/^    "l": ["wait", "expandable?", "expand", "open"],$/;"	s	array:explorer.keyMappings.global.l
+0	coc-settings.json	/^    "o": ["wait", "expanded?", "collapse", "expand"],$/;"	s	array:explorer.keyMappings.global.o
+1	coc-settings.json	/^                "1": "info",$/;"	s	object:languageserver.dls.initializationOptions.linters.cpplint.securities
+1	coc-settings.json	/^                {$/;"	o	array:languageserver.dls.initializationOptions.linters.cpplint.formatPattern
+1	coc-settings.json	/^              "args": ["--filter=-build\/c++11","%file"],$/;"	s	array:languageserver.dls.initializationOptions.linters.cpplint.args
+1	coc-settings.json	/^              {$/;"	o	array:languageserver.dls.initializationOptions.linters.shellcheck.formatPattern
+1	coc-settings.json	/^            "args": [ "--format=gcc", "-"],$/;"	s	array:languageserver.dls.initializationOptions.linters.shellcheck.args
+1	coc-settings.json	/^      "filetypes": [ "sh", "cpp" ],$/;"	s	array:languageserver.dls.filetypes
+1	coc-settings.json	/^      ["expanded?", "collapse", "expand"],$/;"	a	array:explorer.keyMappings.global.<2-LeftMouse>
+1	coc-settings.json	/^      ["expanded?", "collapse", "expand"],$/;"	s	array:explorer.keyMappings.global.<2-LeftMouse>.1
+1	coc-settings.json	/^    "<bs>": ["wait", "gotoParent"],$/;"	s	array:explorer.keyMappings.global.<bs>
+1	coc-settings.json	/^    "<cr>": ["wait", "expandable?",["expanded?", "collapse", "expand"], "open"],$/;"	s	array:explorer.keyMappings.global.<cr>
+1	coc-settings.json	/^    "<cr>": ["wait", "expandable?",["expanded?", "collapse", "expand"], "open"],$/;"	s	array:explorer.keyMappings.global.<cr>.2
+1	coc-settings.json	/^    "J": ["wait", "toggleSelection", "normal:j"],$/;"	s	array:explorer.keyMappings.global.J
+1	coc-settings.json	/^    "K": ["wait", "toggleSelection", "normal:k"],$/;"	s	array:explorer.keyMappings.global.K
+1	coc-settings.json	/^    "[D": ["wait", "markPrev:diagnosticError"],$/;"	s	array:explorer.keyMappings.global.[D
+1	coc-settings.json	/^    "[[": ["wait", "sourcePrev"],$/;"	s	array:explorer.keyMappings.global.[[
+1	coc-settings.json	/^    "[c": ["wait", "markPrev:git"],$/;"	s	array:explorer.keyMappings.global.[c
+1	coc-settings.json	/^    "[d": ["wait", "markPrev:diagnosticError:diagnosticWarning"],$/;"	s	array:explorer.keyMappings.global.[d
+1	coc-settings.json	/^    "[i": ["wait", "indentPrev"],$/;"	s	array:explorer.keyMappings.global.[i
+1	coc-settings.json	/^    "[m": ["wait", "markPrev:modified"],$/;"	s	array:explorer.keyMappings.global.[m
+1	coc-settings.json	/^    "]D": ["wait", "markNext:diagnosticError"],$/;"	s	array:explorer.keyMappings.global.]D
+1	coc-settings.json	/^    "]]": ["wait", "sourceNext"],$/;"	s	array:explorer.keyMappings.global.]]
+1	coc-settings.json	/^    "]c": ["wait", "markNext:git"],$/;"	s	array:explorer.keyMappings.global.]c
+1	coc-settings.json	/^    "]d": ["wait", "markNext:diagnosticError:diagnosticWarning"],$/;"	s	array:explorer.keyMappings.global.]d
+1	coc-settings.json	/^    "]i": ["wait", "indentNext"],$/;"	s	array:explorer.keyMappings.global.]i
+1	coc-settings.json	/^    "]m": ["wait", "markNext:modified"],$/;"	s	array:explorer.keyMappings.global.]m
+1	coc-settings.json	/^    "c": ["wait", "expandable?", "cd", "open"],$/;"	s	array:explorer.keyMappings.global.c
+1	coc-settings.json	/^    "gh": ["wait", "collapse:recursive"],$/;"	s	array:explorer.keyMappings.global.gh
+1	coc-settings.json	/^    "gj": ["wait", "expandableNext"],$/;"	s	array:explorer.keyMappings.global.gj
+1	coc-settings.json	/^    "gk": ["wait", "expandablePrev"],$/;"	s	array:explorer.keyMappings.global.gk
+1	coc-settings.json	/^    "gl": ["wait", "expand:recursive"],$/;"	s	array:explorer.keyMappings.global.gl
+1	coc-settings.json	/^    "gs": ["wait", "reveal:select"],$/;"	s	array:explorer.keyMappings.global.gs
+1	coc-settings.json	/^    "h": ["wait", "collapse"],$/;"	s	array:explorer.keyMappings.global.h
+1	coc-settings.json	/^    "l": ["wait", "expandable?", "expand", "open"],$/;"	s	array:explorer.keyMappings.global.l
+1	coc-settings.json	/^    "o": ["wait", "expanded?", "collapse", "expand"],$/;"	s	array:explorer.keyMappings.global.o
+1gD	init.vim	/^nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>$/;"	m
+2	coc-settings.json	/^                "2": "warning",$/;"	s	object:languageserver.dls.initializationOptions.linters.cpplint.securities
+2	coc-settings.json	/^      "open"$/;"	s	array:explorer.keyMappings.global.<2-LeftMouse>
+2	coc-settings.json	/^      ["expanded?", "collapse", "expand"],$/;"	s	array:explorer.keyMappings.global.<2-LeftMouse>.1
+2	coc-settings.json	/^    "<cr>": ["wait", "expandable?",["expanded?", "collapse", "expand"], "open"],$/;"	a	array:explorer.keyMappings.global.<cr>
+2	coc-settings.json	/^    "<cr>": ["wait", "expandable?",["expanded?", "collapse", "expand"], "open"],$/;"	s	array:explorer.keyMappings.global.<cr>.2
+2	coc-settings.json	/^    "J": ["wait", "toggleSelection", "normal:j"],$/;"	s	array:explorer.keyMappings.global.J
+2	coc-settings.json	/^    "K": ["wait", "toggleSelection", "normal:k"],$/;"	s	array:explorer.keyMappings.global.K
+2	coc-settings.json	/^    "c": ["wait", "expandable?", "cd", "open"],$/;"	s	array:explorer.keyMappings.global.c
+2	coc-settings.json	/^    "l": ["wait", "expandable?", "expand", "open"],$/;"	s	array:explorer.keyMappings.global.l
+2	coc-settings.json	/^    "o": ["wait", "expanded?", "collapse", "expand"],$/;"	s	array:explorer.keyMappings.global.o
+3	coc-settings.json	/^                "3": "warning",$/;"	s	object:languageserver.dls.initializationOptions.linters.cpplint.securities
+3	coc-settings.json	/^    "<cr>": ["wait", "expandable?",["expanded?", "collapse", "expand"], "open"],$/;"	s	array:explorer.keyMappings.global.<cr>
+3	coc-settings.json	/^    "c": ["wait", "expandable?", "cd", "open"],$/;"	s	array:explorer.keyMappings.global.c
+3	coc-settings.json	/^    "l": ["wait", "expandable?", "expand", "open"],$/;"	s	array:explorer.keyMappings.global.l
+3	coc-settings.json	/^    "o": ["wait", "expanded?", "collapse", "expand"],$/;"	s	array:explorer.keyMappings.global.o
+4	coc-settings.json	/^                "4": "error",$/;"	s	object:languageserver.dls.initializationOptions.linters.cpplint.securities
+5	coc-settings.json	/^                "5": "error"$/;"	s	object:languageserver.dls.initializationOptions.linters.cpplint.securities
+<2-LeftMouse>	coc-settings.json	/^    "<2-LeftMouse>": [$/;"	a	object:explorer.keyMappings.global
+<<	coc-settings.json	/^    "<<": "gitStage",$/;"	s	object:explorer.keyMappings.global
+<C-E>	init.vim	/^nnoremap <C-E> :NvimTreeToggle<CR>$/;"	m
+<C-L>	init.vim	/^nnoremap <C-L> :NvimTreeRefresh<CR>$/;"	m
+<C-_>	.vimrc	/^nmap <C-_> <Plug>NERDCommenterToggle$/;"	m
+<C-_>	.vimrc	/^vmap <C-_> <Plug>NERDCommenterToggle<CR>gv$/;"	m
+<C-h>	.vimrc	/^nnoremap <C-h> :nohlsearch<cr>$/;"	m
+<C-h>	.vimrc	/^vnoremap <C-h> :nohlsearch<cr>$/;"	m
+<C-h>	init.vim	/^nnoremap <C-h> :nohlsearch<cr>$/;"	m
+<C-h>	init.vim	/^vnoremap <C-h> :nohlsearch<cr>$/;"	m
+<C-j>	.vimrc	/^cnoremap <C-j> <C-c>$/;"	m
+<C-j>	.vimrc	/^inoremap <C-j> <Esc>$/;"	m
+<C-j>	.vimrc	/^lnoremap <C-j> <Esc>$/;"	m
+<C-j>	.vimrc	/^nnoremap <C-j> <Esc>$/;"	m
+<C-j>	.vimrc	/^onoremap <C-j> <Esc>$/;"	m
+<C-j>	.vimrc	/^snoremap <C-j> <Esc>$/;"	m
+<C-j>	.vimrc	/^vnoremap <C-j> <Esc>$/;"	m
+<C-j>	.vimrc	/^xnoremap <C-j> <Esc>$/;"	m
+<C-k>	.vimrc	/^cnoremap <C-k> <C-c>$/;"	m
+<C-k>	.vimrc	/^inoremap <C-k> <Esc>$/;"	m
+<C-k>	.vimrc	/^lnoremap <C-k> <Esc>$/;"	m
+<C-k>	.vimrc	/^nnoremap <C-k> <Esc>$/;"	m
+<C-k>	.vimrc	/^onoremap <C-k> <Esc>$/;"	m
+<C-k>	.vimrc	/^snoremap <C-k> <Esc>$/;"	m
+<C-k>	.vimrc	/^vnoremap <C-k> <Esc>$/;"	m
+<C-k>	.vimrc	/^xnoremap <C-k> <Esc>$/;"	m
+<C-x>	.vimrc	/^nnoremap <C-x> :terminal<cr>$/;"	m
+<F5>	.vimrc	/^nnoremap <F5> :!cargo run<CR>$/;"	m
+<F7>	.vimrc	/^nnoremap <F7> :UndotreeToggle<cr>$/;"	m
+<F8>	.vimrc	/^nmap <F8> :TagbarToggle<CR>$/;"	m
+<F9>	.vimrc	/^map <F9> :NERDTreeToggle<CR>$/;"	m
+<Leader>L	.vimrc	/^map <Leader>L <Plug>(easymotion-bd-jk)$/;"	m
+<Leader>L	.vimrc	/^nmap <Leader>L <Plug>(easymotion-overwin-line)$/;"	m
+<Leader>f	.vimrc	/^map  <Leader>f <Plug>(easymotion-bd-f)$/;"	m
+<Leader>f	.vimrc	/^nmap <Leader>f <Plug>(easymotion-overwin-f)$/;"	m
+<Leader>w	.vimrc	/^map  <Leader>w <Plug>(easymotion-bd-w)$/;"	m
+<Leader>w	.vimrc	/^nmap <Leader>w <Plug>(easymotion-overwin-w)$/;"	m
+<bs>	coc-settings.json	/^    "<bs>": ["wait", "gotoParent"],$/;"	a	object:explorer.keyMappings.global
+<c-]>	init.vim	/^nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>$/;"	m
+<c-h>	.vimrc	/^nnoremap <c-h> :SidewaysLeft<cr>$/;"	m
+<c-j>	.vimrc	/^nnoremap <c-j> i<cr><Esc>$/;"	m
+<c-j>	init.vim	/^nnoremap <c-j> i<cr><Esc>$/;"	m
+<c-k>	init.vim	/^nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>$/;"	m
+<c-l>	.vimrc	/^nnoremap <c-l> :SidewaysRight<cr>$/;"	m
+<c-p>	.vimrc	/^nnoremap <c-p> :Files<CR>$/;"	m
+<c-p>	init.vim	/^nnoremap <c-p> :Files<CR>$/;"	m
+<cr>	coc-settings.json	/^    "<cr>": ["wait", "expandable?",["expanded?", "collapse", "expand"], "open"],$/;"	a	object:explorer.keyMappings.global
+<esc>	coc-settings.json	/^    "<esc>": "esc",$/;"	s	object:explorer.keyMappings.global
+<leader>c	.vimrc	/^noremap <leader>c :w !xsel -ib<cr><cr>$/;"	m
+<leader>c	init.vim	/^noremap <leader>c :w !xsel -ib<cr><cr>$/;"	m
+<leader>fb	init.vim	/^nnoremap <leader>fb <cmd>Telescope buffers<cr>$/;"	m
+<leader>ff	init.vim	/^nnoremap <leader>ff <cmd>Telescope find_files<cr>$/;"	m
+<leader>fg	init.vim	/^nnoremap <leader>fg <cmd>Telescope live_grep<cr>$/;"	m
+<leader>fh	init.vim	/^nnoremap <leader>fh <cmd>Telescope help_tags<cr>$/;"	m
+<leader>h	.vimrc	/^nnoremap <leader>h :wincmd h<CR>$/;"	m
+<leader>h	init.vim	/^nnoremap <leader>h :wincmd h<CR>$/;"	m
+<leader>j	.vimrc	/^nnoremap <leader>j :wincmd j<CR>$/;"	m
+<leader>j	init.vim	/^nnoremap <leader>j :wincmd j<CR>$/;"	m
+<leader>k	.vimrc	/^nnoremap <leader>k :wincmd k<CR>$/;"	m
+<leader>k	init.vim	/^nnoremap <leader>k :wincmd k<CR>$/;"	m
+<leader>l	.vimrc	/^nnoremap <leader>l :wincmd l<CR>$/;"	m
+<leader>l	init.vim	/^nnoremap <leader>l :wincmd l<CR>$/;"	m
+<leader>n	init.vim	/^nnoremap <leader>n :NvimTreeFindFile<CR>$/;"	m
+<leader>p	.vimrc	/^noremap <leader>p :read !xsel --clipboard --output<cr>$/;"	m
+<leader>p	init.vim	/^noremap <leader>p :read !xsel --clipboard --output<cr>$/;"	m
+<leader>q	.vimrc	/^nmap <leader>q :q<CR>$/;"	m
+<leader>u	.vimrc	/^nnoremap <leader>u :UndotreeToggle<CR> $/;"	m
+<tab>	coc-settings.json	/^    "<tab>": "actionMenu",$/;"	s	object:explorer.keyMappings.global
+>>	coc-settings.json	/^    ">>": "gitUnstage"$/;"	s	object:explorer.keyMappings.global
+?	.vimrc	/^nnoremap ? ?\\v$/;"	m
+?	coc-settings.json	/^    "?": "help",$/;"	s	object:explorer.keyMappings.global
+?	init.vim	/^nnoremap ? ?\\v$/;"	m
+A	coc-settings.json	/^    "A": "addDirectory",$/;"	s	object:explorer.keyMappings.global
+BSC_LAST_READ_CONFIG_KEY_VALUE_LIST=	utilities.sh	/^  declare -gA BSC_LAST_READ_CONFIG_KEY_VALUE_LIST=() # [re]init associative global array$/;"	f
+E	coc-settings.json	/^    "E": "open:vsplit",$/;"	s	object:explorer.keyMappings.global
+EOF	KeepassUpdater.sh	/^  cat <<EOF$/;"	h
+EOF	mousewheel.sh	/^cat >~\/.imwheelrc<<EOF$/;"	h
+EOF	script-template.sh	/^  cat <<EOF$/;"	h
+F	coc-settings.json	/^    "F": "searchRecursive",$/;"	s	object:explorer.keyMappings.global
+H	.vimrc	/^map H ^$/;"	m
+II	coc-settings.json	/^    "II": "previewOnHover:disable",$/;"	s	object:explorer.keyMappings.global
+Ic	coc-settings.json	/^    "Ic": "previewOnHover:toggle:content",$/;"	s	object:explorer.keyMappings.global
+Il	coc-settings.json	/^    "Il": "previewOnHover:toggle:labeling",$/;"	s	object:explorer.keyMappings.global
+J	coc-settings.json	/^    "J": ["wait", "toggleSelection", "normal:j"],$/;"	a	object:explorer.keyMappings.global
+K	coc-settings.json	/^    "K": ["wait", "toggleSelection", "normal:k"],$/;"	a	object:explorer.keyMappings.global
+K	init.vim	/^nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>$/;"	m
+L	.vimrc	/^map L \$$/;"	m
+N	.vimrc	/^nnoremap <silent> N Nzz$/;"	m
+N	init.vim	/^nnoremap <silent> N Nzz$/;"	m
+R	coc-settings.json	/^    "R": "refresh",$/;"	s	object:explorer.keyMappings.global
+Racer	.vimrc	/^augroup Racer$/;"	a
+St	xstl.vim	/^aug St$/;"	a
+USAGE_TEXT	template-v1.sh	/^    cat <<USAGE_TEXT$/;"	h
+X	coc-settings.json	/^    "X": "systemExecute",$/;"	s	object:explorer.keyMappings.global
+["<c-e>"]	init.lua	/^		["<c-e>"] = cmp.mapping(function(fallback)$/;"	f
+["<c-e>"]	nvim/init.lua	/^		["<c-e>"] = cmp.mapping(function(fallback)$/;"	f
+["<cr>"]	init.lua	/^		["<cr>"] = cmp.mapping(function(fallback)$/;"	f
+["<cr>"]	nvim/init.lua	/^		["<cr>"] = cmp.mapping(function(fallback)$/;"	f
+["<s-tab>"]	init.lua	/^		["<s-tab>"] = cmp.mapping(function(fallback)$/;"	f
+["<s-tab>"]	nvim/init.lua	/^		["<s-tab>"] = cmp.mapping(function(fallback)$/;"	f
+["<tab>"]	init.lua	/^		["<tab>"] = cmp.mapping(function(fallback)$/;"	f
+["<tab>"]	nvim/init.lua	/^		["<tab>"] = cmp.mapping(function(fallback)$/;"	f
+["[M"]	init.lua	/^				["[M"] = "@function.outer",$/;"	f
+["[M"]	nvim/init.lua	/^				["[M"] = "@function.outer",$/;"	f
+["[m"]	init.lua	/^				["[m"] = "@function.outer",$/;"	f
+["[m"]	nvim/init.lua	/^				["[m"] = "@function.outer",$/;"	f
+["]M"]	init.lua	/^				["]M"] = "@function.outer",$/;"	f
+["]M"]	nvim/init.lua	/^				["]M"] = "@function.outer",$/;"	f
+["]m"]	init.lua	/^				["]m"] = "@function.outer",$/;"	f
+["]m"]	nvim/init.lua	/^				["]m"] = "@function.outer",$/;"	f
+["af"]	init.lua	/^				["af"] = "@function.outer",$/;"	f
+["af"]	nvim/init.lua	/^				["af"] = "@function.outer",$/;"	f
+["if"]	init.lua	/^				["if"] = "@function.inner",$/;"	f
+["if"]	nvim/init.lua	/^				["if"] = "@function.inner",$/;"	f
+[D	coc-settings.json	/^    "[D": ["wait", "markPrev:diagnosticError"],$/;"	a	object:explorer.keyMappings.global
+[[	coc-settings.json	/^    "[[": ["wait", "sourcePrev"],$/;"	a	object:explorer.keyMappings.global
+[c	coc-settings.json	/^    "[c": ["wait", "markPrev:git"],$/;"	a	object:explorer.keyMappings.global
+[d	coc-settings.json	/^    "[d": ["wait", "markPrev:diagnosticError:diagnosticWarning"],$/;"	a	object:explorer.keyMappings.global
+[i	coc-settings.json	/^    "[i": ["wait", "indentPrev"],$/;"	a	object:explorer.keyMappings.global
+[m	coc-settings.json	/^    "[m": ["wait", "markPrev:modified"],$/;"	a	object:explorer.keyMappings.global
+]D	coc-settings.json	/^    "]D": ["wait", "markNext:diagnosticError"],$/;"	a	object:explorer.keyMappings.global
+]]	coc-settings.json	/^    "]]": ["wait", "sourceNext"],$/;"	a	object:explorer.keyMappings.global
+]c	coc-settings.json	/^    "]c": ["wait", "markNext:git"],$/;"	a	object:explorer.keyMappings.global
+]d	coc-settings.json	/^    "]d": ["wait", "markNext:diagnosticError:diagnosticWarning"],$/;"	a	object:explorer.keyMappings.global
+]i	coc-settings.json	/^    "]i": ["wait", "indentNext"],$/;"	a	object:explorer.keyMappings.global
+]m	coc-settings.json	/^    "]m": ["wait", "markNext:modified"],$/;"	a	object:explorer.keyMappings.global
+_G.copilot_accept	init.lua	/^_G.copilot_accept = function()$/;"	f
+_G.copilot_accept	nvim/init.lua	/^_G.copilot_accept = function()$/;"	f
+_G.firenvim_delay_write	init.lua	/^	_G.firenvim_delay_write = function()$/;"	f
+_G.firenvim_delay_write	nvim/init.lua	/^	_G.firenvim_delay_write = function()$/;"	f
+_G.lsp_format	init.lua	/^_G.lsp_format = function()$/;"	f
+_G.lsp_format	nvim/init.lua	/^_G.lsp_format = function()$/;"	f
+_G.lsp_format_go	init.lua	/^_G.lsp_format_go = function(timeout_ms)$/;"	f
+_G.lsp_format_go	nvim/init.lua	/^_G.lsp_format_go = function(timeout_ms)$/;"	f
+_checkConfigValue	utilities.sh	/^function _checkConfigValue() {$/;"	f
+_doWriteMessage	utilities.sh	/^function _doWriteMessage() {$/;"	f
+_manageThidPartyToolHome	utilities.sh	/^function _manageThidPartyToolHome() {$/;"	f
+_setUpKillChildTrap	utilities.sh	/^function _setUpKillChildTrap() {$/;"	f
+_startProcess	utilities.sh	/^function _startProcess() {$/;"	f
+_stopProcess	utilities.sh	/^function _stopProcess() {$/;"	f
+a	coc-settings.json	/^    "a": "addFile",$/;"	s	object:explorer.keyMappings.global
+args	coc-settings.json	/^              "args": ["--filter=-build\/c++11","%file"],$/;"	a	object:languageserver.dls.initializationOptions.linters.cpplint
+args	coc-settings.json	/^            "args": [ "--fix" ]$/;"	a	object:languageserver.dls.initializationOptions.formatters.dartfmt
+args	coc-settings.json	/^            "args": [ "--format=gcc", "-"],$/;"	a	object:languageserver.dls.initializationOptions.linters.shellcheck
+args	coc-settings.json	/^      "args": ["--stdio"],$/;"	a	object:languageserver.dls
+backupdir	init.lua	/^local backupdir = function()$/;"	f
+backupdir	nvim/init.lua	/^local backupdir = function()$/;"	f
+buf_nnoremap	init.lua	/^	local buf_nnoremap = function(lhs, rhs)$/;"	f
+buf_nnoremap	nvim/init.lua	/^	local buf_nnoremap = function(lhs, rhs)$/;"	f
+buildCompletePath	utilities.sh	/^function buildCompletePath() {$/;"	f
+c	coc-settings.json	/^    "c": ["wait", "expandable?", "cd", "open"],$/;"	a	object:explorer.keyMappings.global
+checkAllProcessFromPIDFiles	utilities.sh	/^function checkAllProcessFromPIDFiles() {$/;"	f
+checkAndFormatPath	utilities.sh	/^function checkAndFormatPath() {$/;"	f
+checkAndSetConfig	utilities.sh	/^function checkAndSetConfig() {$/;"	f
+checkBin	utilities.sh	/^function checkBin() {$/;"	f
+checkDataFile	utilities.sh	/^function checkDataFile() {$/;"	f
+checkLocale	utilities.sh	/^function checkLocale() {$/;"	f
+checkPath	utilities.sh	/^function checkPath() {$/;"	f
+clangd.path	coc-settings.json	/^  "clangd.path": "\/home\/hojjat\/.config\/coc\/extensions\/coc-clangd-data\/install\/11.0.0\/cl/;"	s
+clean_up	template-v1.sh	/^clean_up() {$/;"	f
+cleanup	KeepassUpdater.sh	/^cleanup() {$/;"	f
+cleanup	script-template.sh	/^cleanup() {$/;"	f
+close_command	init.lua	/^		close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"$/;"	f
+close_command	nvim/init.lua	/^		close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"$/;"	f
+cmap	init.lua	/^local cmap = function(lhs, rhs, opts)$/;"	f
+cmap	nvim/init.lua	/^local cmap = function(lhs, rhs, opts)$/;"	f
+cnoremap	init.lua	/^local cnoremap = function(lhs, rhs, opts)$/;"	f
+cnoremap	nvim/init.lua	/^local cnoremap = function(lhs, rhs, opts)$/;"	f
+colorscheme_coc_setup	.vimrc	/^augroup colorscheme_coc_setup | au!$/;"	a
+column	coc-settings.json	/^                  "column": 2,$/;"	n	object:languageserver.dls.initializationOptions.linters.cpplint.formatPattern.1
+column	coc-settings.json	/^                "column": 2,$/;"	n	object:languageserver.dls.initializationOptions.linters.shellcheck.formatPattern.1
+command	coc-settings.json	/^              "command": "cpplint",$/;"	s	object:languageserver.dls.initializationOptions.linters.cpplint
+command	coc-settings.json	/^            "command": "dartfmt",$/;"	s	object:languageserver.dls.initializationOptions.formatters.dartfmt
+command	coc-settings.json	/^            "command": "shellcheck",$/;"	s	object:languageserver.dls.initializationOptions.linters.shellcheck
+command	coc-settings.json	/^      "command": "diagnostic-languageserver",$/;"	s	object:languageserver.dls
+config	init.lua	/^		config = function()$/;"	f
+config	init.lua	/^    config = function() require'nvim-tree'.setup {} end$/;"	f
+config	nvim/init.lua	/^		config = function()$/;"	f
+config	nvim/init.lua	/^    config = function() require'nvim-tree'.setup {} end$/;"	f
+cpp	coc-settings.json	/^          "cpp": "cpplint"$/;"	s	object:languageserver.dls.initializationOptions.filetypes
+cpplint	coc-settings.json	/^          "cpplint": {$/;"	o	object:languageserver.dls.initializationOptions.linters
+dF	coc-settings.json	/^    "dF": "deleteForever",$/;"	s	object:explorer.keyMappings.global
+daemonUsage	utilities.sh	/^function daemonUsage() {$/;"	f
+dart	coc-settings.json	/^          "dart": "dartfmt"$/;"	s	object:languageserver.dls.initializationOptions.formatFiletypes
+dartfmt	coc-settings.json	/^          "dartfmt": {$/;"	o	object:languageserver.dls.initializationOptions.formatters
+dd	coc-settings.json	/^    "dd": "cutFile",$/;"	s	object:explorer.keyMappings.global
+debounce	coc-settings.json	/^              "debounce": 100,$/;"	n	object:languageserver.dls.initializationOptions.linters.cpplint
+debounce	coc-settings.json	/^            "debounce": 100,$/;"	n	object:languageserver.dls.initializationOptions.linters.shellcheck
+deletePIDFile	utilities.sh	/^function deletePIDFile() {$/;"	f
+df	coc-settings.json	/^    "df": "delete",$/;"	s	object:explorer.keyMappings.global
+die	KeepassUpdater.sh	/^die() {$/;"	f
+die	script-template.sh	/^die() {$/;"	f
+die	template-v1.sh	/^die() {$/;"	f
+dls	coc-settings.json	/^    "dls": {$/;"	o	object:languageserver
+doExtractInfoFromPIDFile	utilities.sh	/^function doExtractInfoFromPIDFile() {$/;"	f
+doListConfigKeyValues	utilities.sh	/^function doListConfigKeyValues() {$/;"	f
+dotfiles	README.md	/^# dotfiles$/;"	c
+dumpFuncCall	utilities.sh	/^function dumpFuncCall() {$/;"	f
+e	coc-settings.json	/^    "e": "open",$/;"	s	object:explorer.keyMappings.global
+error	coc-settings.json	/^              "error": "error",$/;"	s	object:languageserver.dls.initializationOptions.linters.shellcheck.securities
+errorMessage	utilities.sh	/^function errorMessage() {$/;"	f
+error_msg	nvim/plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
+expand	init.lua	/^		expand = function(args)$/;"	f
+expand	nvim/init.lua	/^		expand = function(args)$/;"	f
+explorer.icon.enableNerdfont	coc-settings.json	/^  "explorer.icon.enableNerdfont": true,$/;"	b
+explorer.keyMappings.global	coc-settings.json	/^  "explorer.keyMappings.global": {$/;"	o
+explorer.previewAction.onHover	coc-settings.json	/^  "explorer.previewAction.onHover": false,$/;"	b
+explorer.width	coc-settings.json	/^  "explorer.width": 25,$/;"	n
+extractNumberSequence	utilities.sh	/^function extractNumberSequence() {$/;"	f
+f	coc-settings.json	/^    "f": "search",$/;"	s	object:explorer.keyMappings.global
+filetypes	coc-settings.json	/^        "filetypes": {$/;"	o	object:languageserver.dls.initializationOptions
+filetypes	coc-settings.json	/^      "filetypes": [ "sh", "cpp" ],$/;"	a	object:languageserver.dls
+finalizeStartTime	utilities.sh	/^function finalizeStartTime() {$/;"	f
+firenvim_write	init.lua	/^	local firenvim_write = function()$/;"	f
+firenvim_write	nvim/init.lua	/^	local firenvim_write = function()$/;"	f
+format	init.lua	/^		format = function(_, vim_item)$/;"	f
+format	nvim/init.lua	/^		format = function(_, vim_item)$/;"	f
+formatFiletypes	coc-settings.json	/^        "formatFiletypes": {$/;"	o	object:languageserver.dls.initializationOptions
+formatLines	coc-settings.json	/^            "formatLines": 1,$/;"	n	object:languageserver.dls.initializationOptions.linters.shellcheck
+formatPattern	coc-settings.json	/^              "formatPattern": [$/;"	a	object:languageserver.dls.initializationOptions.linters.cpplint
+formatPattern	coc-settings.json	/^            "formatPattern": [$/;"	a	object:languageserver.dls.initializationOptions.linters.shellcheck
+formatters	coc-settings.json	/^        "formatters": {$/;"	o	object:languageserver.dls.initializationOptions
+g*	.vimrc	/^nnoremap <silent> g* g*zz$/;"	m
+g*	init.vim	/^nnoremap <silent> g* g*zz$/;"	m
+g0	init.vim	/^nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>$/;"	m
+g:NERDTreeGitStatusIndicatorMapCustom	.vimrc	/^let g:NERDTreeGitStatusIndicatorMapCustom = {$/;"	v
+g:airline_theme	.vimrc	/^let g:airline_theme = 'codedark'$/;"	v
+g:gitgutter_sign_added	.vimrc	/^let g:gitgutter_sign_added = '✚'$/;"	v
+g:gitgutter_sign_added	init.vim	/^let g:gitgutter_sign_added = '✚'$/;"	v
+g:gitgutter_sign_modified	.vimrc	/^let g:gitgutter_sign_modified = '✹'$/;"	v
+g:gitgutter_sign_modified	init.vim	/^let g:gitgutter_sign_modified = '✹'$/;"	v
+g:gitgutter_sign_modified_removed	.vimrc	/^let g:gitgutter_sign_modified_removed = '-'$/;"	v
+g:gitgutter_sign_modified_removed	init.vim	/^let g:gitgutter_sign_modified_removed = '-'$/;"	v
+g:gitgutter_sign_removed	.vimrc	/^let g:gitgutter_sign_removed = '-'$/;"	v
+g:gitgutter_sign_removed	init.vim	/^let g:gitgutter_sign_removed = '-'$/;"	v
+g:gitgutter_sign_removed_first_line	.vimrc	/^let g:gitgutter_sign_removed_first_line = '-'$/;"	v
+g:gitgutter_sign_removed_first_line	init.vim	/^let g:gitgutter_sign_removed_first_line = '-'$/;"	v
+g:lightline	init.vim	/^let g:lightline = {$/;"	v
+g:mode_dict	xstl.vim	/^let g:mode_dict = { 'n': '', 'no': '', 'nov': '', 'noV': '', "no\\<C-v>": '', 'ni/;"	v
+g:nvim_tree_git_hl	init.vim	/^let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be /;"	v
+g:nvim_tree_icons	init.vim	/^let g:nvim_tree_icons = {$/;"	v
+g:nvim_tree_indent_markers	init.vim	/^let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders /;"	v
+g:nvim_tree_show_icons	init.vim	/^let g:nvim_tree_show_icons = {$/;"	v
+g:onedark_style	init.vim	/^let g:onedark_style = 'darker'$/;"	v
+g:racer_cmd	.vimrc	/^let g:racer_cmd = "\/home\/hojjat\/.cargo\/bin\/racer"$/;"	v
+g:racer_experimental_completer	.vimrc	/^let g:racer_experimental_completer = 1$/;"	v
+g:racer_insert_paren	.vimrc	/^let g:racer_insert_paren = 1$/;"	v
+g:rustfmt_autosave	.vimrc	/^let g:rustfmt_autosave = 1$/;"	v
+g:signify_sign_add	aesth.vim	/^let g:signify_sign_add = '▎'$/;"	v
+g:signify_sign_change	aesth.vim	/^let g:signify_sign_change = '▎'$/;"	v
+g:signify_sign_delete	aesth.vim	/^let g:signify_sign_delete = '▎'$/;"	v
+g:signify_sign_delete_first_line	aesth.vim	/^let g:signify_sign_delete_first_line = '▎'$/;"	v
+g:spaceline_colorscheme	init.vim	/^let g:spaceline_colorscheme = 'space'$/;"	v
+g:spaceline_seperate_style	init.vim	/^let g:spaceline_seperate_style = 'curve'$/;"	v
+g:terminal_color_0	aesth.vim	/^let g:terminal_color_0 = "#363a4e"$/;"	v
+g:terminal_color_1	aesth.vim	/^let g:terminal_color_1 = "#ec7279"$/;"	v
+g:terminal_color_10	aesth.vim	/^let g:terminal_color_10 = "#a0c980"$/;"	v
+g:terminal_color_11	aesth.vim	/^let g:terminal_color_11 = "#deb974"$/;"	v
+g:terminal_color_12	aesth.vim	/^let g:terminal_color_12 = "#6cb6eb"$/;"	v
+g:terminal_color_13	aesth.vim	/^let g:terminal_color_13 = "#d38aea"$/;"	v
+g:terminal_color_14	aesth.vim	/^let g:terminal_color_14 = "#5dbbc1"$/;"	v
+g:terminal_color_15	aesth.vim	/^let g:terminal_color_15 = "#c5cdd9"$/;"	v
+g:terminal_color_2	aesth.vim	/^let g:terminal_color_2 = "#a0c980"$/;"	v
+g:terminal_color_3	aesth.vim	/^let g:terminal_color_3 = "#deb974"$/;"	v
+g:terminal_color_4	aesth.vim	/^let g:terminal_color_4 = "#6cb6eb"$/;"	v
+g:terminal_color_5	aesth.vim	/^let g:terminal_color_5 = "#d38aea"$/;"	v
+g:terminal_color_6	aesth.vim	/^let g:terminal_color_6 = "#5dbbc1"$/;"	v
+g:terminal_color_7	aesth.vim	/^let g:terminal_color_7 = "#c5cdd9"$/;"	v
+g:terminal_color_8	aesth.vim	/^let g:terminal_color_8 = "#363a4e"$/;"	v
+g:terminal_color_9	aesth.vim	/^let g:terminal_color_9 = "#ec7279"$/;"	v
+g:terminal_color_background	aesth.vim	/^let g:terminal_color_background = "#2b2d3a"$/;"	v
+g:terminal_color_foreground	aesth.vim	/^let g:terminal_color_foreground = "#c5cdd9"$/;"	v
+g<dot>	coc-settings.json	/^    "g<dot>": "toggleHidden",$/;"	s	object:explorer.keyMappings.global
+gD	init.vim	/^nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>$/;"	m
+gW	init.vim	/^nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>$/;"	m
+g[	init.vim	/^nnoremap <silent> g[ <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>$/;"	m
+g]	init.vim	/^nnoremap <silent> g] <cmd>lua vim.lsp.diagnostic.goto_next()<CR>$/;"	m
+ga	init.vim	/^nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>$/;"	m
+gb	coc-settings.json	/^    "gb": "gotoSource:buffer",$/;"	s	object:explorer.keyMappings.global
+gd	coc-settings.json	/^    "gd": "listDrive",$/;"	s	object:explorer.keyMappings.global
+gd	init.vim	/^nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>$/;"	m
+getConfigValue	utilities.sh	/^function getConfigValue() {$/;"	f
+getDetailedVersion	utilities.sh	/^function getDetailedVersion() {$/;"	f
+getFormattedDatetime	utilities.sh	/^function getFormattedDatetime() {$/;"	f
+getLastLinesFromN	utilities.sh	/^function getLastLinesFromN() {$/;"	f
+getLinesFromNToP	utilities.sh	/^function getLinesFromNToP() {$/;"	f
+getPIDFromFile	utilities.sh	/^function getPIDFromFile() {$/;"	f
+getProcessNameFromFile	utilities.sh	/^function getProcessNameFromFile() {$/;"	f
+getURLContents	utilities.sh	/^function getURLContents() {$/;"	f
+getUptime	utilities.sh	/^function getUptime() {$/;"	f
+getVersion	utilities.sh	/^function getVersion() {$/;"	f
+gf	coc-settings.json	/^    "gf": "gotoSource:file",$/;"	s	object:explorer.keyMappings.global
+gh	coc-settings.json	/^    "gh": ["wait", "collapse:recursive"],$/;"	a	object:explorer.keyMappings.global
+gj	coc-settings.json	/^    "gj": ["wait", "expandableNext"],$/;"	a	object:explorer.keyMappings.global
+gk	coc-settings.json	/^    "gk": ["wait", "expandablePrev"],$/;"	a	object:explorer.keyMappings.global
+gl	coc-settings.json	/^    "gl": ["wait", "expand:recursive"],$/;"	a	object:explorer.keyMappings.global
+gr	init.vim	/^nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>$/;"	m
+gs	coc-settings.json	/^    "gs": ["wait", "reveal:select"],$/;"	a	object:explorer.keyMappings.global
+h	coc-settings.json	/^    "h": ["wait", "collapse"],$/;"	a	object:explorer.keyMappings.global
+i	coc-settings.json	/^    "i": false, \/\/ cancel default mapkey$/;"	b	object:explorer.keyMappings.global
+ic	coc-settings.json	/^    "ic": "preview:content",$/;"	s	object:explorer.keyMappings.global
+il	coc-settings.json	/^    "il": "preview:labeling",$/;"	s	object:explorer.keyMappings.global
+imap	init.lua	/^local imap = function(lhs, rhs, opts)$/;"	f
+imap	nvim/init.lua	/^local imap = function(lhs, rhs, opts)$/;"	f
+info	utilities.sh	/^function info() {$/;"	f
+initializationOptions	coc-settings.json	/^      "initializationOptions": {$/;"	o	object:languageserver.dls
+initializeStartTime	utilities.sh	/^function initializeStartTime() {$/;"	f
+inoremap	init.lua	/^local inoremap = function(lhs, rhs, opts)$/;"	f
+inoremap	nvim/init.lua	/^local inoremap = function(lhs, rhs, opts)$/;"	f
+isAbsolutePath	utilities.sh	/^function isAbsolutePath() {$/;"	f
+isCheckModeConfigOnly	utilities.sh	/^function isCheckModeConfigOnly() {$/;"	f
+isCompoundedNumber	utilities.sh	/^function isCompoundedNumber() {$/;"	f
+isEmptyDirectory	utilities.sh	/^function isEmptyDirectory()$/;"	f
+isNumber	utilities.sh	/^function isNumber() {$/;"	f
+isRelativePath	utilities.sh	/^function isRelativePath() {$/;"	f
+isRootUser	utilities.sh	/^function isRootUser() {$/;"	f
+isRunningProcess	utilities.sh	/^function isRunningProcess() {$/;"	f
+isStderr	coc-settings.json	/^              "isStderr": true,$/;"	b	object:languageserver.dls.initializationOptions.linters.cpplint
+isStdout	coc-settings.json	/^              "isStdout": false,$/;"	b	object:languageserver.dls.initializationOptions.linters.cpplint
+isVersionGreater	utilities.sh	/^function isVersionGreater() {$/;"	f
+killChildProcesses	utilities.sh	/^function killChildProcesses() {$/;"	f
+l	coc-settings.json	/^    "l": ["wait", "expandable?", "expand", "open"],$/;"	a	object:explorer.keyMappings.global
+languageserver	coc-settings.json	/^  "languageserver": {$/;"	o
+left_mouse_command	init.lua	/^		left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"$/;"	f
+left_mouse_command	nvim/init.lua	/^		left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"$/;"	f
+line	coc-settings.json	/^                  "line": 1,$/;"	n	object:languageserver.dls.initializationOptions.linters.cpplint.formatPattern.1
+line	coc-settings.json	/^                "line": 1,$/;"	n	object:languageserver.dls.initializationOptions.linters.shellcheck.formatPattern.1
+linters	coc-settings.json	/^        "linters": {$/;"	o	object:languageserver.dls.initializationOptions
+listConfigKeys	utilities.sh	/^function listConfigKeys() {$/;"	f
+loadConfigKeyValueList	utilities.sh	/^function loadConfigKeyValueList() {$/;"	f
+manageAntHome	utilities.sh	/^function manageAntHome() {$/;"	f
+manageDaemon	utilities.sh	/^function manageDaemon() {$/;"	f
+manageJavaHome	utilities.sh	/^function manageJavaHome() {$/;"	f
+manageMavenHome	utilities.sh	/^function manageMavenHome() {$/;"	f
+mapleader	.vimrc	/^let mapleader = " " $/;"	v
+mapleader	init.vim	/^let mapleader = " " $/;"	v
+matchesOneOf	utilities.sh	/^function matchesOneOf() {$/;"	f
+message	coc-settings.json	/^                  "message": 3,$/;"	n	object:languageserver.dls.initializationOptions.linters.cpplint.formatPattern.1
+message	coc-settings.json	/^                "message": 4,$/;"	n	object:languageserver.dls.initializationOptions.linters.shellcheck.formatPattern.1
+middle_mouse_command	init.lua	/^		middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"$/;"	f
+middle_mouse_command	nvim/init.lua	/^		middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"$/;"	f
+msg	KeepassUpdater.sh	/^msg() {$/;"	f
+msg	script-template.sh	/^msg() {$/;"	f
+n	.vimrc	/^nnoremap <silent> n nzz$/;"	m
+n	init.vim	/^nnoremap <silent> n nzz$/;"	m
+nkeymap	nvim/lua/keybindings.lua	/^local function nkeymap(key, map)$/;"	f
+nmap	init.lua	/^local nmap = function(lhs, rhs, opts)$/;"	f
+nmap	nvim/init.lua	/^local nmap = function(lhs, rhs, opts)$/;"	f
+nnoremap	init.lua	/^local nnoremap = function(lhs, rhs, opts)$/;"	f
+nnoremap	nvim/init.lua	/^local nnoremap = function(lhs, rhs, opts)$/;"	f
+note	coc-settings.json	/^              "note": "info"$/;"	s	object:languageserver.dls.initializationOptions.linters.shellcheck.securities
+numbers	init.lua	/^		numbers = function(opts)$/;"	f
+numbers	nvim/init.lua	/^		numbers = function(opts)$/;"	f
+o	coc-settings.json	/^    "o": ["wait", "expanded?", "collapse", "expand"],$/;"	a	object:explorer.keyMappings.global
+offsetColumn	coc-settings.json	/^              "offsetColumn": 0,$/;"	n	object:languageserver.dls.initializationOptions.linters.cpplint
+offsetColumn	coc-settings.json	/^            "offsetColumn": 0,$/;"	n	object:languageserver.dls.initializationOptions.linters.shellcheck
+offsetLine	coc-settings.json	/^              "offsetLine": 0,$/;"	n	object:languageserver.dls.initializationOptions.linters.cpplint
+offsetLine	coc-settings.json	/^            "offsetLine": 0,$/;"	n	object:languageserver.dls.initializationOptions.linters.shellcheck
+on_attach	init.lua	/^	on_attach = function(client, bufnr)$/;"	f
+on_attach	init.lua	/^local on_attach = function(_, _)$/;"	f
+on_attach	nvim/init.lua	/^local on_attach = function(_, _)$/;"	f
+p	coc-settings.json	/^    "p": "pasteFile",$/;"	s	object:explorer.keyMappings.global
+parse_params	KeepassUpdater.sh	/^parse_params() {$/;"	f
+parse_params	script-template.sh	/^parse_params() {$/;"	f
+parse_user_options	template-v1.sh	/^parse_user_options() {$/;"	f
+pruneSlash	utilities.sh	/^function pruneSlash() {$/;"	f
+q	coc-settings.json	/^    "q": "quit",$/;"	s	object:explorer.keyMappings.global
+r	coc-settings.json	/^    "r": "rename",$/;"	s	object:explorer.keyMappings.global
+removeAllSpecifiedPartsFromString	utilities.sh	/^function removeAllSpecifiedPartsFromString() {$/;"	f
+right_mouse_command	init.lua	/^		right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"$/;"	f
+right_mouse_command	nvim/init.lua	/^		right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"$/;"	f
+run	init.lua	/^		run = function()$/;"	f
+run	nvim/init.lua	/^		run = function()$/;"	f
+s	.vimrc	/^nmap s <Plug>(easymotion-overwin-f2)$/;"	m
+s	coc-settings.json	/^    "s": "open:split",$/;"	s	object:explorer.keyMappings.global
+s:my_colors_setup	.vimrc	/^func! s:my_colors_setup() abort$/;"	f
+save_profiles	nvim/plugin/packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
+securities	coc-settings.json	/^              "securities": {$/;"	o	object:languageserver.dls.initializationOptions.linters.cpplint
+securities	coc-settings.json	/^            "securities": {$/;"	o	object:languageserver.dls.initializationOptions.linters.shellcheck
+security	coc-settings.json	/^                  "security": 4$/;"	n	object:languageserver.dls.initializationOptions.linters.cpplint.formatPattern.1
+security	coc-settings.json	/^                "security": 3$/;"	n	object:languageserver.dls.initializationOptions.linters.shellcheck.formatPattern.1
+setup_colors	KeepassUpdater.sh	/^setup_colors() {$/;"	f
+setup_colors	script-template.sh	/^setup_colors() {$/;"	f
+sh	coc-settings.json	/^          "sh": "shellcheck",$/;"	s	object:languageserver.dls.initializationOptions.filetypes
+shellcheck	coc-settings.json	/^          "shellcheck": {$/;"	o	object:languageserver.dls.initializationOptions.linters
+size	init.lua	/^	size = function(term)$/;"	f
+size	nvim/init.lua	/^	size = function(term)$/;"	f
+sleep_until	slp	/^sleep_until() {$/;"	f
+sourceName	coc-settings.json	/^              "sourceName": "cpplint",$/;"	s	object:languageserver.dls.initializationOptions.linters.cpplint
+sourceName	coc-settings.json	/^            "sourceName": "shellcheck",$/;"	s	object:languageserver.dls.initializationOptions.linters.shellcheck
+t	coc-settings.json	/^    "t": "open:tab",$/;"	s	object:explorer.keyMappings.global
+t	init.lua	/^local t = function(keys)$/;"	f
+t	nvim/init.lua	/^local t = function(keys)$/;"	f
+time	nvim/plugin/packer_compiled.lua	/^    time = function(chunk, start) end$/;"	f
+time	nvim/plugin/packer_compiled.lua	/^    time = function(chunk, start)$/;"	f
+tmap	init.lua	/^local tmap = function(lhs, rhs, opts)$/;"	f
+tmap	nvim/init.lua	/^local tmap = function(lhs, rhs, opts)$/;"	f
+tnoremap	init.lua	/^local tnoremap = function(lhs, rhs, opts)$/;"	f
+tnoremap	nvim/init.lua	/^local tnoremap = function(lhs, rhs, opts)$/;"	f
+try_loadstring	nvim/plugin/packer_compiled.lua	/^local function try_loadstring(s, component, name)$/;"	f
+updateStructure	utilities.sh	/^function updateStructure() {$/;"	f
+usage	KeepassUpdater.sh	/^usage() {$/;"	f
+usage	script-template.sh	/^usage() {$/;"	f
+usage	template-v1.sh	/^usage() {$/;"	f
+vmap	init.lua	/^local vmap = function(lhs, rhs, opts)$/;"	f
+vmap	nvim/init.lua	/^local vmap = function(lhs, rhs, opts)$/;"	f
+vnoremap	init.lua	/^local vnoremap = function(lhs, rhs, opts)$/;"	f
+vnoremap	nvim/init.lua	/^local vnoremap = function(lhs, rhs, opts)$/;"	f
+warning	coc-settings.json	/^              "warning": "warning",$/;"	s	object:languageserver.dls.initializationOptions.linters.shellcheck.securities
+warning	utilities.sh	/^function warning() {$/;"	f
+writeMessage	utilities.sh	/^function writeMessage() {$/;"	f
+writeMessageSL	utilities.sh	/^function writeMessageSL() {$/;"	f
+writeNotFound	utilities.sh	/^function writeNotFound() {$/;"	f
+writeOK	utilities.sh	/^function writeOK() {$/;"	f
+writePIDFile	utilities.sh	/^function writePIDFile() {$/;"	f
+xmap	init.lua	/^local xmap = function(lhs, rhs, opts)$/;"	f
+xmap	nvim/init.lua	/^local xmap = function(lhs, rhs, opts)$/;"	f
+xnoremap	init.lua	/^local xnoremap = function(lhs, rhs, opts)$/;"	f
+xnoremap	nvim/init.lua	/^local xnoremap = function(lhs, rhs, opts)$/;"	f
+xstl#astl	xstl.vim	/^function xstl#astl() abort$/;"	f
+xstl#cft	xstl.vim	/^function xstl#cft() abort$/;"	f
+xstl#file	xstl.vim	/^function xstl#file() abort$/;"	f
+xstl#icon	xstl.vim	/^function xstl#icon() abort$/;"	f
+xstl#istl	xstl.vim	/^function xstl#istl() abort$/;"	f
+xstl#lsp	xstl.vim	/^function! xstl#lsp() abort$/;"	f
+xstl#mod	xstl.vim	/^function xstl#mod() abort$/;"	f
+yn	coc-settings.json	/^    "yn": "copyFilename",$/;"	s	object:explorer.keyMappings.global
+yp	coc-settings.json	/^    "yp": "copyFilepath",$/;"	s	object:explorer.keyMappings.global
+yy	coc-settings.json	/^    "yy": "copyFile",$/;"	s	object:explorer.keyMappings.global
+zh	coc-settings.json	/^    "zh": "toggleHidden",$/;"	s	object:explorer.keyMappings.global
