@@ -16,7 +16,6 @@ require("packer").startup(function()
 	use("tpope/vim-endwise") -- wisely add "end" in ruby, endfunction/endif/more in vim script, etc.
 	use({
 		"numToStr/Comment.nvim",
-		tag='v0.6',
 		config = function()
 			require("Comment").setup()
 		end,
@@ -25,7 +24,7 @@ require("packer").startup(function()
 	use("ludovicchabant/vim-gutentags") -- automatic tags management
 	use("editorconfig/editorconfig-vim")
 	use("kevinhwang91/nvim-hlslens") -- highlight search lens
-	use({ "nvim-treesitter/nvim-treesitter", commit = "8a1acc00d2a768985a79358d1a6caa9f08a0eeea", run = ":TSUpdate" })
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
 
@@ -80,8 +79,8 @@ require("packer").startup(function()
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
-	use("akinsho/bufferline.nvim")
 
+	use {'akinsho/bufferline.nvim', tag = "v1.*", requires = 'kyazdani42/nvim-web-devicons'}
 	-- file type icons
 	use("ryanoasis/vim-devicons")
 	use("kyazdani42/nvim-web-devicons")
@@ -100,12 +99,12 @@ require("packer").startup(function()
 	})
 
 	use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    },
-    config = function() require'nvim-tree'.setup {} end
-}
+		'kyazdani42/nvim-tree.lua',
+		requires = {
+			'kyazdani42/nvim-web-devicons', -- optional, for file icon
+		},
+		config = function() require'nvim-tree'.setup {} end
+	}
 
 	use({
 		"glacambre/firenvim",
@@ -271,10 +270,10 @@ end
 nnoremap("Z", t(":BufSurfBack<cr>"), { silent = true })
 nnoremap("X", t(":BufSurfForward<cr>"), { silent = true })
 
-require'nvim-tree'.setup {}
+-- require'nvim-tree'.setup {}
 -- nvim-tree
 nnoremap("<c-n>", t(":NvimTreeToggle<cr>"), { silent = true })
-vim.g.nvim_tree_git_hl = 1
+-- vim.g.nvim_tree_git_hl = 1
 
 -- endwise
 vim.g.endwise_no_mappings = 1
@@ -298,22 +297,6 @@ nnoremap("#", "#<cmd>lua require('hlslens').start()<cr>")
 nnoremap("g*", "g*<cmd>lua require('hlslens').start()<cr>")
 nnoremap("g#", "g#<cmd>lua require('hlslens').start()<cr>")
 
-local bufferline = {
-	options = {
-		numbers = function(opts)
-			return opts.id
-		end,
-		close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
-		right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
-		left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
-		middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
-		diagnostics = "nvim_lsp",
-		diagnostics_update_in_insert = true,
-		show_buffer_close_icons = false,
-		show_close_icon = false,
-		separator_style = "slant",
-	},
-}
 
 -- gitsigns
 require("gitsigns").setup({
