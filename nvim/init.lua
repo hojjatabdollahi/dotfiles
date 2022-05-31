@@ -25,7 +25,7 @@ require("packer").startup(function()
 	use("ludovicchabant/vim-gutentags") -- automatic tags management
 	use("editorconfig/editorconfig-vim")
 	use("kevinhwang91/nvim-hlslens") -- highlight search lens
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({ "nvim-treesitter/nvim-treesitter", commit = "8a1acc00d2a768985a79358d1a6caa9f08a0eeea", run = ":TSUpdate" })
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
 
