@@ -16,7 +16,7 @@ require("packer").startup(function()
 	use("tpope/vim-endwise") -- wisely add "end" in ruby, endfunction/endif/more in vim script, etc.
 	use({
 		"numToStr/Comment.nvim",
-		tag='v0.6',
+		tag = 'v0.6',
 		config = function()
 			require("Comment").setup()
 		end,
@@ -70,7 +70,7 @@ require("packer").startup(function()
 	use("folke/trouble.nvim")
 
 	use("akinsho/toggleterm.nvim")
-	
+
 	use("joshuarubin/rubix.vim")
 	use("joshuarubin/rubix-telescope.nvim")
 
@@ -100,12 +100,12 @@ require("packer").startup(function()
 	})
 
 	use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    },
-    config = function() require'nvim-tree'.setup {} end
-}
+		'kyazdani42/nvim-tree.lua',
+		requires = {
+			'kyazdani42/nvim-web-devicons', -- optional, for file icon
+		},
+		config = function() require 'nvim-tree'.setup {} end
+	}
 
 	use({
 		"glacambre/firenvim",
@@ -271,7 +271,7 @@ end
 nnoremap("Z", t(":BufSurfBack<cr>"), { silent = true })
 nnoremap("X", t(":BufSurfForward<cr>"), { silent = true })
 
-require'nvim-tree'.setup {}
+require 'nvim-tree'.setup {}
 -- nvim-tree
 nnoremap("<c-n>", t(":NvimTreeToggle<cr>"), { silent = true })
 vim.g.nvim_tree_git_hl = 1
@@ -490,7 +490,7 @@ end
 vim.g.firenvim_config = firenvim_config
 
 require("nvim-treesitter.configs").setup({
-	ensure_installed = {"rust", "c"},
+	ensure_installed = { "rust", "c" },
 	highlight = { enable = true },
 	-- indent = { enable = true }, -- TODO(jawa) this is too experimental right now, enable when possible
 	context_commentstring = {
@@ -567,6 +567,7 @@ local on_attach = function(_, _)
 	buf_nnoremap("[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>")
 	buf_nnoremap("]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>")
 	buf_nnoremap("<leader>cl", "<cmd>lua vim.lsp.codelens.run()<cr>")
+	buf_nnoremap("<leader>k", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
 end
 
 _G.lsp_format = function()
@@ -607,7 +608,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
-local servers = { "clangd", "cmake" }
+local servers = { "clangd", "cmake", "pyright" }
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup({
 		on_attach = on_attach,
