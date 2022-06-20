@@ -69,7 +69,7 @@ require("packer").startup(function()
 	use("folke/trouble.nvim")
 
 	use("akinsho/toggleterm.nvim")
-	
+
 	use("joshuarubin/rubix.vim")
 	use("joshuarubin/rubix-telescope.nvim")
 
@@ -473,7 +473,7 @@ end
 vim.g.firenvim_config = firenvim_config
 
 require("nvim-treesitter.configs").setup({
-	ensure_installed = {"rust", "c"},
+	ensure_installed = { "rust", "c" },
 	highlight = { enable = true },
 	-- indent = { enable = true }, -- TODO(jawa) this is too experimental right now, enable when possible
 	context_commentstring = {
@@ -550,6 +550,7 @@ local on_attach = function(_, _)
 	buf_nnoremap("[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>")
 	buf_nnoremap("]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>")
 	buf_nnoremap("<leader>cl", "<cmd>lua vim.lsp.codelens.run()<cr>")
+	buf_nnoremap("<leader>k", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
 end
 
 _G.lsp_format = function()
@@ -590,7 +591,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
-local servers = { "clangd", "cmake" }
+local servers = { "clangd", "cmake", "pyright" }
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup({
 		on_attach = on_attach,
