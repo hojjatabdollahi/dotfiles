@@ -5,6 +5,16 @@
 # ln -s $(pwd)/.zshrc ~/.zshrc
 # ln -s $(pwd)/starship.toml ~/.config/starship.toml
 #
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+mkcdir ()
+{
+    mkdir -p -- "$1" &&
+      cd -P -- "$1"
+}
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -13,7 +23,7 @@ setopt autocd extendedglob
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/hojjat/.zshrc'
+zstyle :compinstall filename '/home/dft/.zshrc'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 autoload -Uz compinit
@@ -21,11 +31,8 @@ compinit
 # End of lines added by compinstall
 
 
-export PATH=/home/hojjat/.cargo/bin:$PATH
+export PATH=/home/dft/.cargo/bin:$PATH
 eval "$(starship init zsh)"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias ls=exa
-
-
-source ~/.profile
 

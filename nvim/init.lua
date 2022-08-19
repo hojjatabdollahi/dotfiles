@@ -59,7 +59,7 @@ require("packer").startup(function()
 	use("rafamadriz/friendly-snippets")
 
 	-- telescope
-	use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" } })
+	use({ "nvim-telescope/telescope.nvim", commit="6e7ee3829225d5c97c1ebfff686050142ffe5867",  requires = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" } })
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use("jvgrootveld/telescope-zoxide")
 	use("AckslD/nvim-neoclip.lua")
