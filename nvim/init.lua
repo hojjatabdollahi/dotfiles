@@ -195,6 +195,9 @@ vim.o.spell = true
 vim.opt.isfname:remove({ "=" })
 
 vim.g.mapleader = ","
+-- Treesitter folding 
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 
 local t = function(keys)
 	return vim.api.nvim_replace_termcodes(keys, true, true, true)
