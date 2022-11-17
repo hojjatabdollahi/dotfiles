@@ -273,6 +273,7 @@ end
 nnoremap("Z", t(":BufSurfBack<cr>"), { silent = true })
 nnoremap("X", t(":BufSurfForward<cr>"), { silent = true })
 
+require('hlslens').setup()
 -- require'nvim-tree'.setup {}
 -- nvim-tree
 nnoremap("<c-n>", t(":NvimTreeToggle<cr>"), { silent = true })
@@ -591,8 +592,8 @@ _G.lsp_format_go = function(timeout_ms)
 	vim.lsp.buf.formatting_seq_sync()
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").default_capabilities() --.update_capabilities(capabilities)
 
 local servers = {"ccls", "clangd", "cmake", "pyright" }
 for _, lsp in ipairs(servers) do
