@@ -62,7 +62,8 @@ require("packer").startup(function()
 	use("rafamadriz/friendly-snippets")
 
 	-- telescope
-	use({ "nvim-telescope/telescope.nvim", commit="6e7ee3829225d5c97c1ebfff686050142ffe5867",  requires = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" } })
+	use({ "nvim-telescope/telescope.nvim", commit = "6e7ee3829225d5c97c1ebfff686050142ffe5867",
+		requires = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" } })
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use("jvgrootveld/telescope-zoxide")
 	use("AckslD/nvim-neoclip.lua")
@@ -83,7 +84,7 @@ require("packer").startup(function()
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
 
-	use {'akinsho/bufferline.nvim', tag = "v1.*", requires = 'kyazdani42/nvim-web-devicons'}
+	use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
 	-- file type icons
 	use("ryanoasis/vim-devicons")
 	use("kyazdani42/nvim-web-devicons")
@@ -106,7 +107,7 @@ require("packer").startup(function()
 		requires = {
 			'kyazdani42/nvim-web-devicons', -- optional, for file icon
 		},
-		config = function() require'nvim-tree'.setup {} end
+		config = function() require 'nvim-tree'.setup {} end
 	}
 
 	use({
@@ -198,7 +199,9 @@ vim.o.spell = true
 vim.opt.isfname:remove({ "=" })
 
 vim.g.mapleader = ","
-
+-- Treesitter folding
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 
 local t = function(keys)
 	return vim.api.nvim_replace_termcodes(keys, true, true, true)
@@ -274,6 +277,7 @@ end
 nnoremap("Z", t(":BufSurfBack<cr>"), { silent = true })
 nnoremap("X", t(":BufSurfForward<cr>"), { silent = true })
 
+require('hlslens').setup()
 -- require'nvim-tree'.setup {}
 -- nvim-tree
 nnoremap("<c-n>", t(":NvimTreeToggle<cr>"), { silent = true })
@@ -618,7 +622,8 @@ _G.lsp_format = function()
 	if filetype == "go" then
 		lsp_format_go()
 	else
-		vim.lsp.buf.formatting_seq_sync()
+		-- vim.lsp.buf.formatting_seq_sync()
+		vim.lsp.buf.format()
 	end
 end
 
@@ -648,10 +653,10 @@ _G.lsp_format_go = function(timeout_ms)
 	vim.lsp.buf.formatting_seq_sync()
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").default_capabilities() --.update_capabilities(capabilities)
 
-local servers = {"ccls", "clangd", "cmake", "pyright" }
+local servers = { "ccls", "clangd", "cmake", "pyright" }
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup({
 		on_attach = on_attach,
@@ -920,7 +925,8 @@ nmap("<leader>z", "<cmd>Telescope zoxide list<cr>", { silent = true })
 nmap("<c-p>", "<cmd>Telescope rubix find_files<cr>", { silent = true })
 nmap(
 	"<c-f>",
-	"<cmd>lua require'telescope'.extensions.frecency.frecency{ sorter = require('telescope.config').values.file_sorter() }<cr>",
+	"<cmd>lua require'telescope'.extensions.frecency.frecency{ sorter = require('telescope.config').values.file_sorter() }<cr>"
+	,
 	{ silent = true }
 )
 nmap("<c-s><c-s>", "<cmd>Telescope rubix grep_string<cr>", { silent = true })
@@ -1133,9 +1139,4 @@ vim.cmd([[autocmd TermOpen * nnoremap <buffer> q <nop>]]) -- disable macros in t
 -- these two lines must be last
 vim.o.exrc = true -- enable per-directory .vimrc files
 vim.o.secure = true -- disable unsafe commands in local .vimrc files
-
--- Treesitter folding 
-vim.wo.foldmethod = 'expr'
-vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 99

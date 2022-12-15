@@ -31,8 +31,9 @@ compinit
 # End of lines added by compinstall
 
 
-export PATH=/home/dft/.cargo/bin:$PATH
+export PATH=/home/hojjat/.cargo/bin:$PATH
 eval "$(starship init zsh)"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias ls=exa
 
+export PATH=/home/hojjat/.local/bin:$PATH
