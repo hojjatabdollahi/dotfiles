@@ -43,6 +43,9 @@ require("packer").startup(function()
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 	use("mhartington/formatter.nvim")
 
+	-- debug dap
+	use({ "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} })
+
 	-- completion
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-path")
@@ -195,9 +198,7 @@ vim.o.spell = true
 vim.opt.isfname:remove({ "=" })
 
 vim.g.mapleader = ","
--- Treesitter folding 
-vim.wo.foldmethod = 'expr'
-vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+
 
 local t = function(keys)
 	return vim.api.nvim_replace_termcodes(keys, true, true, true)
@@ -300,6 +301,62 @@ nnoremap("#", "#<cmd>lua require('hlslens').start()<cr>")
 nnoremap("g*", "g*<cmd>lua require('hlslens').start()<cr>")
 nnoremap("g#", "g#<cmd>lua require('hlslens').start()<cr>")
 
+-- nvim dap
+require("dapui").setup({
+  icons = { expanded = "▾", collapsed = "▸" },
+  mappings = {
+    -- Use a table to apply multiple mappings
+    expand = { "<CR>", "<2-LeftMouse>" },
+    open = "o",
+    remove = "d",
+    edit = "e",
+    repl = "r",
+    toggle = "t",
+  },
+  -- Expand lines larger than the window
+  -- Requires >= 0.7
+  expand_lines = vim.fn.has("nvim-0.7"),
+  -- Layouts define sections of the screen to place windows.
+  -- The position can be "left", "right", "top" or "bottom".
+  -- The size specifies the height/width depending on position. It can be an Int
+  -- or a Float. Integer specifies height/width directly (i.e. 20 lines/columns) while
+  -- Float value specifies percentage (i.e. 0.3 - 30% of available lines/columns)
+  -- Elements are the elements shown in the layout (in order).
+  -- Layouts are opened in order so that earlier layouts take priority in window sizing.
+  layouts = {
+    {
+      elements = {
+      -- Elements can be strings or table with id and size keys.
+        { id = "scopes", size = 0.25 },
+        "breakpoints",
+        "stacks",
+        "watches",
+      },
+      size = 40, -- 40 columns
+      position = "left",
+    },
+    {
+      elements = {
+        "repl",
+        "console",
+      },
+      size = 0.25, -- 25% of total lines
+      position = "bottom",
+    },
+  },
+  floating = {
+    max_height = nil, -- These can be integers or a float between 0 and 1.
+    max_width = nil, -- Floats will be treated as percentage of your screen.
+    border = "single", -- Border style. Can be "single", "double" or "rounded"
+    mappings = {
+      close = { "q", "<Esc>" },
+    },
+  },
+  windows = { indent = 1 },
+  render = {
+    max_type_length = nil, -- Can be integer or nil.
+  }
+})
 
 -- gitsigns
 require("gitsigns").setup({
@@ -1076,3 +1133,9 @@ vim.cmd([[autocmd TermOpen * nnoremap <buffer> q <nop>]]) -- disable macros in t
 -- these two lines must be last
 vim.o.exrc = true -- enable per-directory .vimrc files
 vim.o.secure = true -- disable unsafe commands in local .vimrc files
+
+-- Treesitter folding 
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
