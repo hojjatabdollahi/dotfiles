@@ -30,15 +30,15 @@ truncation_symbol = "repo: "
 #deleted = "x"
 [git_status]
 conflicted = "⚔️ "
-ahead = "🏎️ 💨 ×${count} "
-behind = "🐢 ×${count} "
-diverged = "🔱 🏎️ 💨 ×${ahead_count} 🐢 ×${behind_count} "
-untracked = "🛤️  ×${count} "
-stashed = "📦 "
-modified = "📝 ×${count} "
-staged = "🗃️  ×${count} "
-renamed = "📛 ×${count} "
-deleted = "🗑️  ×${count} "
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = "⇡${ahead_count}⇣×${behind_count} "
+untracked = " ${count} "
+modified = " ${count} "
+staged = "+${count} "
+renamed = "襁${count} "
+up_to_date = " "
+deleted = "${count} "
 style = "bright-white"
 format = "$all_status$ahead_behind"
 
@@ -147,11 +147,6 @@ symbol = " "
 
 [ruby]
 symbol = " "
-
-[python]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 
 [rust]
 symbol = " "
