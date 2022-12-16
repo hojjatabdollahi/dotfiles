@@ -45,3 +45,10 @@ source ~/.profile
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+if [[ $(hostname -s) = "dft-nuc-1" ]]; then
+else
+	# opam configuration
+	[[ ! -r /home/hojjat/.opam/opam-init/init.zsh ]] || source /home/hojjat/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+fi
+
+
