@@ -16,11 +16,12 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+#
 
 if [[ $(hostname -s) = "dft-nuc-1" ]]; then
 	export PATH=/home/dft/.cargo/bin:/home/dft/.local/share/neovim/bin:$PATH
 else
-	export PATH=/home/hojjat/.cargo/bin:/home/hojjat/.local/share/neovim/bin:$PATH
+	export PATH=/home/hojjat/.local/share/bob/nvim-bin:/home/hojjat/.cargo/bin:/home/hojjat/.local/share/neovim/bin:$PATH
 fi
 
 eval "$(starship init zsh)"
@@ -33,6 +34,7 @@ alias gh="git checkout"
 alias gc="git commit"
 alias gp="git pull"
 alias gP="git push"
+alias cat=bat
 mkcdir ()
 {
     mkdir -p -- "$1" &&
@@ -52,3 +54,11 @@ else
 fi
 
 
+export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"
+
+eval "$(atuin init zsh)"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
