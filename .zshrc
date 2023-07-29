@@ -36,4 +36,4 @@ eval "$(starship init zsh)"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias ls=exa
 
-export PATH=/home/hojjat/.local/bin:$PATH
+export PATH=/home/hojjat/.local/share/neovim/bin:/home/hojjat/.local/bin:$PATH
