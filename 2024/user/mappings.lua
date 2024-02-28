@@ -25,6 +25,20 @@ return {
   ["<F3>"] = {
       "<cmd>cnext<cr>",
       desc = "Goes to the next item in quickfix window"
-    }
+    },
+  ["<leader>lF"] = {
+    function()
+      require('conform').format({lsp_fallback="always"})
+    end,
+      desc = "format using conform"
+    },
+  },
+  v = {
+  ["<leader>lF"] = {
+    function()
+      require('conform').format({async = true, lsp_fallback=true})
+    end,
+      desc = "format using conform"
+    },
   }
 }
